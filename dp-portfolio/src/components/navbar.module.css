@@ -6,3 +6,9 @@
 * {
   font-family: "arial-greek";
 }
+
+.navbarContainer {
+  background-color: #eff1f1;
+  border-radius: 10px;
+  height: 80px;
+}
