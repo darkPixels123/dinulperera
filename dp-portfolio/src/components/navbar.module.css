@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "arial-greek";
+  src: url("../fonts/arial-greek.ttf");
+}
+
+* {
+  font-family: "arial-greek";
+}
