@@ -1,0 +1,8 @@
+.modeImg {
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+.modeImg:hover {
+  scale: 1.08;
+}

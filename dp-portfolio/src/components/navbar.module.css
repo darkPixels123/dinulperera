@@ -3,12 +3,55 @@
   src: url("../fonts/arial-greek.ttf");
 }
 
+@font-face {
+  font-family: "quicksand";
+  src: url("../fonts/Quicksand-Regular.ttf");
+}
+
 * {
-  font-family: "arial-greek";
+  font-family: "quicksand";
+  font-weight: 700;
 }
 
 .navbarContainer {
   background-color: #eff1f1;
   border-radius: 10px;
-  height: 80px;
+  height: 85px;
+}
+
+.sectionsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sectionsContainer span {
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+
+.sectionsContainer span:hover {
+  scale: 1.08;
+}
+
+.darkOrLightMode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myLogoContainer {
+  display: flex;
+  justify-content: left;
+  padding-left: 30px;
+  align-items: center;
+}
+
+.modeImg {
+  transition: all ease-in-out 0.3s;
+}
+
+.modeImg:hover {
+  scale: 1.08;
+  cursor: pointer;
 }
