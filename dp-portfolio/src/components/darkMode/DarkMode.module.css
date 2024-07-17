@@ -4,5 +4,11 @@
 }
 
 .modeImg:hover {
+  opacity: 0.6;
   scale: 1.08;
+}
+
+.darkMode {
+  background-color: #121212;
+  color: #ffffff;
 }

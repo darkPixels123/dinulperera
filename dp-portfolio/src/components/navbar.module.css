@@ -14,9 +14,8 @@
 }
 
 .navbarContainer {
-  background-color: #eff1f1;
   border-radius: 10px;
-  height: 85px;
+  height: 70px;
 }
 
 .sectionsContainer {
@@ -31,7 +30,8 @@
 }
 
 .sectionsContainer span:hover {
-  scale: 1.08;
+  box-sizing: border-box;
+  scale: 1.05;
 }
 
 .darkOrLightMode {
@@ -47,11 +47,15 @@
   align-items: center;
 }
 
-.modeImg {
-  transition: all ease-in-out 0.3s;
+.myLogoContainer img {
+  transition: ease-in-out 0.4s;
 }
 
-.modeImg:hover {
+.myLogoContainer img:hover {
   scale: 1.08;
-  cursor: pointer;
+}
+
+.default {
+  background-color: rgb(49, 49, 49, 0.7);
+  background-color: rgb(239, 241, 241, 1);
 }
