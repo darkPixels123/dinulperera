@@ -5,6 +5,10 @@ import myBlackLogo from "../../assets/images/navbar-icons/black.png";
 import myWhiteLogo from "../../assets/images/navbar-icons/white.png";
 import DarkMode from "../darkMode/DarkMode";
 
+//sidenavbar
+import SideNavbar from "../side-navbar/sideNavbar";
+//sidenavbar
+
 export default function Navbar() {
   const selectedTheme = localStorage.getItem("selectedTheme");
 
@@ -15,6 +19,7 @@ export default function Navbar() {
   return (
     // navbar container
     <>
+      {/* navbar */}
       <div>
         <Grid container sx={{ display: { xs: "none", lg: "flex" } }}>
           <Grid item lg={1} />
@@ -71,8 +76,8 @@ export default function Navbar() {
             className={styles.navbarContainer}
             style={{
               backgroundColor: isDarkMode
-                ? "rgb(49, 49, 49, 0.7)"
-                : "rgb(239, 241, 241, 1)",
+                ? "rgb(36,36,36,1)"
+                : "rgb(235, 235, 240, 1)",
             }}
           >
             <Grid item xs={4} className={styles.myLogoContainer}>
@@ -84,12 +89,13 @@ export default function Navbar() {
               />
             </Grid>
             <Grid item xs={6} />
-            <Grid item xs={2}>
-              
+            <Grid item xs={2} className={styles.collapseIconContainer}>
+              <SideNavbar darkMode={isDarkMode} />
             </Grid>
           </Grid>
         </Grid>
       </div>
+      {/* side-navbar  */}
     </>
     // navbar container
   );
