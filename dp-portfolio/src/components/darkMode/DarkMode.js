@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import styles from "../darkMode/DarkMode.module.css";
 import lightModeIcon from "../../assets/images/navbar-icons/light mode.png";
 import darkModeIcon from "../../assets/images/navbar-icons/dark mode.png";
 
 export default function DarkMode({ navbarMode }) {
-
     const selectedTheme = localStorage.getItem("selectedTheme");
-
     const [isDarkMode, setIsDarkMode] = useState(selectedTheme === "dark");
 
     const toggleDarkMode = () => {
@@ -36,5 +34,5 @@ export default function DarkMode({ navbarMode }) {
                 alt="Toggle Dark Mode"
             />
         </div>
-    )
+    );
 }

@@ -1,0 +1,8 @@
+.sectionsContainer {
+  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  font-size: 20px;
+}

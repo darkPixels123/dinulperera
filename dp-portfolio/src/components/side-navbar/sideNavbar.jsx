@@ -1,13 +1,13 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import styles from "../sideNavbar.module.css";
 
-// smaller screens
 import collapseWhite from "../../assets/images/navbar-icons/collapse-white.png";
 import collapseBlack from "../../assets/images/navbar-icons/collapse-black.png";
-// smaller screens
+import DarkMode from "../darkMode/DarkMode";
 
-export default function SideNavbar({ darkMode }) {
+export default function SideNavbar({ darkMode, setDarkMode }) {
   const [state, setState] = React.useState({
     bottom: false,
   });
@@ -20,7 +20,6 @@ export default function SideNavbar({ darkMode }) {
     ) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
 
@@ -29,12 +28,20 @@ export default function SideNavbar({ darkMode }) {
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
         backgroundColor: darkMode ? "rgb(36, 36, 36)" : "rgb(239, 241, 241, 1)",
+        color: darkMode ? "rgb(239, 241, 241, 1)" : "rgb(36, 36, 36)",
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <div style={{ height: 200 }}></div>
+      <div className={styles.sectionsContainer} style={{ height: 500 }}>
+        <DarkMode navbarMode={setDarkMode} />
+        <h5>About</h5>
+        <h5>Tech & Tools</h5>
+        <h5>Projects</h5>
+        <h5>Hackathons</h5>
+        <h5>Contact</h5>
+      </div>
     </Box>
   );
 

@@ -1,25 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../navbar.module.css";
 import { Grid } from "@mui/material";
 import myBlackLogo from "../../assets/images/navbar-icons/black.png";
 import myWhiteLogo from "../../assets/images/navbar-icons/white.png";
 import DarkMode from "../darkMode/DarkMode";
-
-//sidenavbar
 import SideNavbar from "../side-navbar/sideNavbar";
-//sidenavbar
 
 export default function Navbar() {
   const selectedTheme = localStorage.getItem("selectedTheme");
+  const [isDarkMode, setIsDarkMode] = useState(selectedTheme === "dark");
 
-  const [isDarkMode, setIsDarkMode] = useState(
-    selectedTheme === "dark" ? true : false
-  );
+  useEffect(() => {
+    document.body.classList.toggle(styles.darkMode, isDarkMode);
+  }, [isDarkMode]);
 
   return (
-    // navbar container
     <>
-      {/* navbar */}
       <div>
         <Grid container sx={{ display: { xs: "none", lg: "flex" } }}>
           <Grid item lg={1} />
@@ -34,15 +30,10 @@ export default function Navbar() {
                 : "rgb(239, 241, 241, 1)",
             }}
           >
-            <Grid item lg={4} className={styles.myLogoContainer}>
-              <img
-                src={isDarkMode ? myWhiteLogo : myBlackLogo}
-                width={40}
-                height={40}
-                alt="Logo"
-              />
-            </Grid>
-            <Grid item lg={7} className={styles.sectionsContainer}>
+            {/* mylogo */}
+            <Grid item lg={5} className={styles.myLogoContainer}></Grid>
+            {/* mylogo */}
+            <Grid item lg={6} className={styles.sectionsContainer}>
               <span>About</span>
               <span>Tech & Tools</span>
               <span>Projects</span>
@@ -80,23 +71,16 @@ export default function Navbar() {
                 : "rgb(235, 235, 240, 1)",
             }}
           >
-            <Grid item xs={4} className={styles.myLogoContainer}>
-              <img
-                src={isDarkMode ? myWhiteLogo : myBlackLogo}
-                width={40}
-                height={40}
-                alt="Logo"
-              />
-            </Grid>
+            {/* mylogo */}
+            <Grid item xs={4} className={styles.myLogoContainer}></Grid>
+            {/* mylogo */}
             <Grid item xs={6} />
             <Grid item xs={2} className={styles.collapseIconContainer}>
-              <SideNavbar darkMode={isDarkMode} />
+              <SideNavbar darkMode={isDarkMode} setDarkMode={setIsDarkMode} />
             </Grid>
           </Grid>
         </Grid>
       </div>
-      {/* side-navbar  */}
     </>
-    // navbar container
   );
 }
