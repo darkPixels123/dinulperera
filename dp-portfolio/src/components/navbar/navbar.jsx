@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "../navbar.module.css";
 import { Grid } from "@mui/material";
-import myBlackLogo from "../../assets/images/navbar-icons/black.png";
-import myWhiteLogo from "../../assets/images/navbar-icons/white.png";
 import DarkMode from "../darkMode/DarkMode";
 import SideNavbar from "../side-navbar/sideNavbar";
 
-export default function Navbar() {
-  const selectedTheme = localStorage.getItem("selectedTheme");
-  const [isDarkMode, setIsDarkMode] = useState(selectedTheme === "dark");
-
-  useEffect(() => {
-    document.body.classList.toggle(styles.darkMode, isDarkMode);
-  }, [isDarkMode]);
-
+export default function Navbar({ isDarkMode, toggleDarkMode }) {
   return (
     <>
       <div>
@@ -49,7 +40,7 @@ export default function Navbar() {
                 alignItems: "center",
               }}
             >
-              <DarkMode navbarMode={setIsDarkMode} />
+              <DarkMode navbarMode={toggleDarkMode} />
             </Grid>
           </Grid>
         </Grid>
@@ -76,7 +67,10 @@ export default function Navbar() {
             {/* mylogo */}
             <Grid item xs={6} />
             <Grid item xs={2} className={styles.collapseIconContainer}>
-              <SideNavbar darkMode={isDarkMode} setDarkMode={setIsDarkMode} />
+              <SideNavbar
+                darkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
             </Grid>
           </Grid>
         </Grid>

@@ -1,11 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/navbar/navbar";
 import styles from "../main.module.css";
 import { Grid } from "@mui/material";
 
 import lenis from "../components/animations/lenis";
+import UserBrief from "./UserBrief";
 
 export default function Main() {
+  const selectedTheme = localStorage.getItem("selectedTheme");
+  const [isDarkMode, setIsDarkMode] = useState(selectedTheme === "dark");
+
+  useEffect(() => {
+    document.body.classList.toggle(styles.darkMode, isDarkMode);
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+    localStorage.setItem("selectedTheme", newDarkModeState ? "dark" : "light");
+    document.body.classList.toggle(styles.darkMode, newDarkModeState);
+  };
+
   useEffect(() => {
     return () => {
       lenis.destroy();
@@ -17,13 +32,14 @@ export default function Main() {
       <Grid container>
         {/* navbar */}
         <Grid item xs={12}>
-          <Navbar />
+          <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         </Grid>
-        <Grid xs={12}></Grid>
         {/* navbar */}
-        {/* about section */}
-        
-        {/* about section */}
+        {/* user brief section */}
+        <Grid xs={12}>
+          <UserBrief />
+        </Grid>
+        {/* user brief section */}
       </Grid>
     </div>
   );
