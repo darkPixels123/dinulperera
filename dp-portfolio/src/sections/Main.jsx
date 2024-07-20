@@ -36,8 +36,8 @@ export default function Main() {
         </Grid>
         {/* navbar */}
         {/* user brief section */}
-        <Grid xs={12}>
-          <UserBrief />
+        <Grid xs={12} mt={5}>
+          <UserBrief isDarkMode={isDarkMode} />
         </Grid>
         {/* user brief section */}
       </Grid>

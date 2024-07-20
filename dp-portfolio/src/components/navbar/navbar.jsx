@@ -47,10 +47,9 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
         <Grid
           container
           sx={{
-            display: { xs: "block", lg: "none" },
+            display: { xs: "flex", lg: "none" },
           }}
         >
-          <Grid item xs={1} />
           <Grid
             container
             item

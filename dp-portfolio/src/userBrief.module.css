@@ -1,9 +1,28 @@
+@font-face {
+  font-family: "arial";
+  src: url("../src/fonts/arial-greek.ttf");
+}
+
+.backGroundGif_NightTime {
+  background-image: url("assets/images/gifs/pokemon-nighttime.gif");
+}
+
+.backGroundGif_DayTime {
+  background-image: url("assets/images/gifs/pokemon-daytime.gif");
+}
+
 .message {
+  width: 100px;
   border-radius: 20px;
   padding: 8px 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
   display: inline-block;
+  color: white;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.introTxt {
   color: white;
   font-family: monospace;
   font-size: 16px;
@@ -18,7 +37,7 @@
   left: -7px;
   height: 20px;
   width: 20px;
-  background: rgb(0, 122, 255);
+  background: var(--main-blue-color);
   border-bottom-right-radius: 15px;
 }
 
@@ -40,12 +59,48 @@
 
 .yours .message {
   margin-right: 25%;
-  background-color: rgb(0, 122, 255);
+  background-color: var(--main-blue-color);
   position: relative;
 }
 
 .messages {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
+}
+
+.userProfileCard {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+
+.myName {
+  font-family: monospace;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.myTitle {
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: -23px;
+  color: rgb(161, 161, 164);
+}
+
+.avatarWithOpacity {
+  opacity: 0.8; /* Adjust the opacity value as needed */
+}
+
+.userPositions {
+  margin-top: 10vh;
+}
+
+.positions {
+  font-family: "arial";
+  font-size: 6vw;
+  word-spacing: 5px;
 }
