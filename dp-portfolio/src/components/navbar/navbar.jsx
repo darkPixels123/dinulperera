@@ -40,7 +40,7 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
                 alignItems: "center",
               }}
             >
-              <DarkMode navbarMode={toggleDarkMode} />
+              <DarkMode toggleDarkMode={toggleDarkMode} />
             </Grid>
           </Grid>
         </Grid>

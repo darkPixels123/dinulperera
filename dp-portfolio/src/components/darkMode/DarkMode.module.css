@@ -1,3 +1,27 @@
+:root {
+  --body-background-color-light: #ffffff; /* Light mode color */
+  --body-background-color-dark: #121212; /* Dark mode color */
+  --body-background-color: var(
+    --body-background-color-light
+  ); /* Default to light mode */
+}
+
+body {
+  background-color: var(--body-background-color);
+}
+
+.yours .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: var(--body-background-color);
+  border-bottom-right-radius: 10px;
+}
+
 .modeImg {
   transition-duration: 500ms;
   cursor: pointer;

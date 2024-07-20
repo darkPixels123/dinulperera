@@ -7,15 +7,15 @@ import lenis from "../components/animations/lenis";
 import UserBrief from "./UserBrief";
 
 export default function Main() {
-  const selectedTheme = localStorage.getItem("selectedTheme");
-  const [isDarkMode, setIsDarkMode] = useState(selectedTheme === "dark");
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("selectedTheme") === "dark"
+  );
 
   useEffect(() => {
     document.body.classList.toggle(styles.darkMode, isDarkMode);
   }, [isDarkMode]);
 
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
+  const toggleDarkMode = (newDarkModeState) => {
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("selectedTheme", newDarkModeState ? "dark" : "light");
     document.body.classList.toggle(styles.darkMode, newDarkModeState);
