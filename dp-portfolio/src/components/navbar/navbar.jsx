@@ -56,6 +56,8 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
             xs={12}
             className={styles.navbarContainer}
             style={{
+              marginRight: "20px",
+              marginLeft: "20px",
               backgroundColor: isDarkMode
                 ? "rgb(36,36,36,1)"
                 : "rgb(235, 235, 240, 1)",

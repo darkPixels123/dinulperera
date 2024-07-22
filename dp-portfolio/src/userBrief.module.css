@@ -81,9 +81,11 @@
   font-family: monospace;
   font-size: 36px;
   font-weight: 500;
+  text-align: start;
 }
 
 .myTitle {
+  text-align: start;
   font-family: monospace;
   font-size: 16px;
   font-weight: 500;
@@ -127,7 +129,7 @@
 }
 
 .downloadBtn:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .DarkdownloadResumeBtn {
@@ -170,4 +172,31 @@
   50% {
     transform: translateY(-5px);
   }
+}
+
+.socialMediaSection {
+  height: 200px;
+  width: 100%;
+}
+
+.socialMediaBtn {
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+
+.socialMediaBtn:hover {
+  transform: scale(1.05);
+}
+
+.DarkSocialMediaBtn {
+  background-color: rgb(49, 49, 49, 0.7);
+}
+
+.LightSocialMediaBtn {
+  background-color: rgb(239, 241, 241, 1);
 }
