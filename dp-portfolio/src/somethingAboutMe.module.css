@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "arial";
+  src: url("../src/fonts/arial-greek.ttf");
+}
+
+.topicName {
+  font-size: 55px;
+  font-family: "arial";
+}

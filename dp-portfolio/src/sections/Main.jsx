@@ -5,6 +5,7 @@ import { Grid } from "@mui/material";
 
 import lenis from "../components/animations/lenis";
 import UserBrief from "./UserBrief";
+import SomethingAboutMe from "./SomethingAboutMe";
 
 export default function Main() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -40,6 +41,11 @@ export default function Main() {
           <UserBrief isDarkMode={isDarkMode} />
         </Grid>
         {/* user brief section */}
+        {/* something about me */}
+        <Grid item xs={12} mt={5}>
+          <SomethingAboutMe isDarkMode={isDarkMode} />
+        </Grid>
+        {/* something about me */}
       </Grid>
     </div>
   );
