@@ -7,7 +7,7 @@ import SideNavbar from "../side-navbar/sideNavbar";
 export default function Navbar({ isDarkMode, toggleDarkMode }) {
   return (
     <>
-      <div>
+      <div style={{ position: "fixed", zIndex: 1000, width: "100%" }}>
         <Grid container sx={{ display: { xs: "none", lg: "flex" } }}>
           <Grid item lg={1} />
           <Grid
@@ -18,29 +18,31 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
             style={{
               backgroundColor: isDarkMode
                 ? "rgb(49, 49, 49, 0.7)"
-                : "rgb(239, 241, 241, 1)",
+                : "rgb(239, 241, 241, 0.7)",
             }}
           >
-            {/* mylogo */}
-            <Grid item lg={5} className={styles.myLogoContainer}></Grid>
-            {/* mylogo */}
-            <Grid item lg={6} className={styles.sectionsContainer}>
-              <span>About</span>
-              <span>Tech & Tools</span>
-              <span>Projects</span>
-              <span>Hackathons</span>
-              <span>Contact</span>
-            </Grid>
-            <Grid
-              item
-              lg={1}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <DarkMode toggleDarkMode={toggleDarkMode} />
+            <Grid container className={styles.navbarContent}>
+              {/* mylogo */}
+              <Grid item lg={5} className={styles.myLogoContainer}></Grid>
+              {/* mylogo */}
+              <Grid item lg={6} className={styles.sectionsContainer}>
+                <a href="#section1">About</a>
+                <a>Tech & Tools</a>
+                <a>Projects</a>
+                <a>Hackathons</a>
+                <a>Contact</a>
+              </Grid>
+              <Grid
+                item
+                lg={1}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <DarkMode toggleDarkMode={toggleDarkMode} />
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -59,8 +61,8 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
               marginRight: "20px",
               marginLeft: "20px",
               backgroundColor: isDarkMode
-                ? "rgb(36,36,36,1)"
-                : "rgb(235, 235, 240, 1)",
+                ? "rgb(49, 49, 49, 0.7)"
+                : "rgb(239, 241, 241, 0.7)",
             }}
           >
             {/* mylogo */}

@@ -3,6 +3,11 @@
   src: url("../src/fonts/arial-greek.ttf");
 }
 
+@font-face {
+  font-family: "helvetica";
+  src: url("../src/fonts/helvetica.ttf");
+}
+
 .backGroundGif_NightTime {
   background-image: url("assets/images/gifs/pokemon-nighttime.gif");
 }
@@ -18,14 +23,14 @@
   display: inline-block;
   color: white;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 13.5px;
   font-weight: 500;
 }
 
 .introTxt {
   color: white;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 13.5px;
   font-weight: 500;
 }
 
@@ -79,7 +84,7 @@
 
 .myName {
   font-family: monospace;
-  font-size: 36px;
+  font-size: 1.7rem;
   font-weight: 500;
   text-align: start;
 }
@@ -87,9 +92,9 @@
 .myTitle {
   text-align: start;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: 500;
-  margin-top: -23px;
+  margin-top: -18px;
   color: rgb(161, 161, 164);
 }
 
@@ -110,6 +115,7 @@
 }
 
 .somethingAboutMe {
+  font-size: 0.9rem;
   display: flex;
   align-items: start;
   word-spacing: 3px;
@@ -180,9 +186,11 @@
 }
 
 .socialMediaBtn {
+  height: 50px;
   border-radius: 10px;
   padding: 20px;
   display: flex;
+  font-size: 0.9rem;
   justify-content: center;
   align-items: center;
   transition-duration: 250ms;

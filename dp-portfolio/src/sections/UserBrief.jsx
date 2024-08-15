@@ -74,9 +74,17 @@ export default function UserBrief({ isDarkMode }) {
   return (
     <div>
       {/* user card  */}
-      <Grid container>
+      <Grid
+        container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          position: "relative",
+        }}
+        sx={{ height: { md: "75vh" } }}
+      >
         <Grid
-          style={{ width: "100%" }}
+          style={{ width: "100%", position: "relative" }}
           sx={{
             display: { xs: "none", md: "block" },
           }}
@@ -92,7 +100,13 @@ export default function UserBrief({ isDarkMode }) {
             }}
           />
         </Grid>
-        <Grid item container style={{ position: "absolute" }}>
+        <Grid
+          item
+          container
+          sx={{
+            position: { xs: "relative", md: "absolute" },
+          }}
+        >
           <Grid item xs={1} />
           <Grid item xs={10} container>
             <Grid item xs={12}>
@@ -120,7 +134,7 @@ export default function UserBrief({ isDarkMode }) {
                   </div>
                   <div
                     style={{
-                      marginTop: "-20px",
+                      marginTop: "-10px",
                       paddingLeft: "10px",
                       display: "flex",
                       flexDirection: "column",
@@ -130,7 +144,7 @@ export default function UserBrief({ isDarkMode }) {
                   >
                     <h2 className={styles.myName}>Dinul Perera.</h2>
                     <h4 className={styles.myTitle}>
-                      Bsc(Hons) in Information and Technology(UG)
+                      Bsc(Hons) in Information and Technology (UG)
                     </h4>
                   </div>
                 </div>

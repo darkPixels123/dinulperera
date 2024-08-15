@@ -3,11 +3,13 @@ import Navbar from "../components/navbar/navbar";
 import styles from "../main.module.css";
 import { Grid } from "@mui/material";
 
-import lenis from "../components/animations/lenis";
+import useLenis from "../components/smoothScroll/useLenis";
 import UserBrief from "./UserBrief";
 import SomethingAboutMe from "./SomethingAboutMe";
 
 export default function Main() {
+  useLenis();
+
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("selectedTheme") === "dark"
   );
@@ -22,12 +24,6 @@ export default function Main() {
     document.body.classList.toggle(styles.darkMode, newDarkModeState);
   };
 
-  useEffect(() => {
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   return (
     <div className={styles.mainContainer}>
       <Grid container>
@@ -37,13 +33,17 @@ export default function Main() {
         </Grid>
         {/* navbar */}
         {/* user brief section */}
-        <Grid item xs={12} mt={5}>
-          <UserBrief isDarkMode={isDarkMode} />
+        <Grid item xs={12} mt={10}>
+          <section id="section1">
+            <UserBrief isDarkMode={isDarkMode} />
+          </section>
         </Grid>
         {/* user brief section */}
         {/* something about me */}
-        <Grid item xs={12} mt={5}>
-          <SomethingAboutMe isDarkMode={isDarkMode} />
+        <Grid item xs={12}>
+          <section id="section2">
+            <SomethingAboutMe isDarkMode={isDarkMode} />
+          </section>
         </Grid>
         {/* something about me */}
       </Grid>

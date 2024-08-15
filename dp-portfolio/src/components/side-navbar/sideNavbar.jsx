@@ -34,11 +34,11 @@ export default function SideNavbar({ darkMode, toggleDarkMode }) {
     >
       <div className={styles.sectionsContainer} style={{ height: 500 }}>
         <DarkMode toggleDarkMode={toggleDarkMode} />
-        <h5>About</h5>
-        <h5>Tech & Tools</h5>
-        <h5>Projects</h5>
-        <h5>Hackathons</h5>
-        <h5>Contact</h5>
+        <a>About</a>
+        <a>Tech & Tools</a>
+        <a>Projects</a>
+        <a>Hackathons</a>
+        <a>Contact</a>
       </div>
     </Box>
   );
