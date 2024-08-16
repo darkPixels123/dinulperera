@@ -7,7 +7,12 @@ import collapseWhite from "../../assets/images/navbar-icons/collapse-white.png";
 import collapseBlack from "../../assets/images/navbar-icons/collapse-black.png";
 import DarkMode from "../darkMode/DarkMode";
 
-export default function SideNavbar({ darkMode, toggleDarkMode }) {
+export default function SideNavbar({
+  darkMode,
+  toggleDarkMode,
+  onNavigate,
+  sectionRefs,
+}) {
   const [state, setState] = React.useState({
     bottom: false,
   });
@@ -34,11 +39,11 @@ export default function SideNavbar({ darkMode, toggleDarkMode }) {
     >
       <div className={styles.sectionsContainer} style={{ height: 500 }}>
         <DarkMode toggleDarkMode={toggleDarkMode} />
-        <a>About</a>
-        <a>Tech & Tools</a>
-        <a>Projects</a>
-        <a>Hackathons</a>
-        <a>Contact</a>
+        <h5 onClick={() => onNavigate(sectionRefs.section1Ref)}>About</h5>
+        <h5>Tech & Tools</h5>
+        <h5>Projects</h5>
+        <h5>Hackathons</h5>
+        <h5>Contact</h5>
       </div>
     </Box>
   );

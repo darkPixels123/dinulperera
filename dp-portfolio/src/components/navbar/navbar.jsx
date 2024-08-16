@@ -4,7 +4,12 @@ import { Grid } from "@mui/material";
 import DarkMode from "../darkMode/DarkMode";
 import SideNavbar from "../side-navbar/sideNavbar";
 
-export default function Navbar({ isDarkMode, toggleDarkMode }) {
+export default function Navbar({
+  isDarkMode,
+  toggleDarkMode,
+  onNavigate,
+  sectionRefs,
+}) {
   return (
     <>
       <div style={{ position: "fixed", zIndex: 1000, width: "100%" }}>
@@ -26,11 +31,13 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
               <Grid item lg={5} className={styles.myLogoContainer}></Grid>
               {/* mylogo */}
               <Grid item lg={6} className={styles.sectionsContainer}>
-                <a href="#section1">About</a>
-                <a>Tech & Tools</a>
-                <a>Projects</a>
-                <a>Hackathons</a>
-                <a>Contact</a>
+                <span onClick={() => onNavigate(sectionRefs.section1Ref)}>
+                  About
+                </span>
+                <span>Tech & Tools</span>
+                <span>Projects</span>
+                <span>Hackathons</span>
+                <span>Contact</span>
               </Grid>
               <Grid
                 item
@@ -73,6 +80,8 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
               <SideNavbar
                 darkMode={isDarkMode}
                 toggleDarkMode={toggleDarkMode}
+                onNavigate={onNavigate}
+                sectionRefs={sectionRefs}
               />
             </Grid>
           </Grid>
