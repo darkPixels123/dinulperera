@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../loading.module.css";
+import coffee from "../assets/images/gifs/coffee_loading2.gif";
 
 export default function Loading({ isDarkMode }) {
   return (
@@ -18,7 +19,8 @@ export default function Loading({ isDarkMode }) {
             color: isDarkMode ? "white" : "black",
           }}
         >
-          Please Wait ...
+          <img src={coffee} />
+          Grabbing Some Coffee ...
         </h4>
         <div className={styles.loader}>
           <div></div>

@@ -12,8 +12,6 @@
 .myDesc p {
   text-align: left;
   font-size: 0.9rem;
-  display: flex;
-  align-items: start;
   word-spacing: 3px;
   line-height: 25px;
 }

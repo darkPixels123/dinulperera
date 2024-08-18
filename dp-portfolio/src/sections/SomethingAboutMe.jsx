@@ -114,13 +114,17 @@ export default function SomethingAboutMe({ isDarkMode }) {
       <Grid container>
         <Grid item xs={1} />
         <Grid item xs={10} container>
-          <Grid xs={12} lg={6} item container>
-            <Grid item xs={12}>
-              <h3 className={styles.topicName}>Something About Myself</h3>
-            </Grid>
+          <Grid
+            xs={12}
+            lg={6}
+            item
+            container
+            style={{ alignItems: "flex-start" }}
+          >
             <Grid item xs={12} className={styles.myDesc}>
+              <h3 className={styles.topicName}>Something About Myself</h3>
               {/* something about me description */}
-              <p>
+              <p style={{ marginTop: "60px" }}>
                 As a motivated software developer and enthusiastic graphic
                 designer, I bring a unique combination of creative and technical
                 expertise to every project. My in-depth knowledge of programming
@@ -144,14 +148,14 @@ export default function SomethingAboutMe({ isDarkMode }) {
             </Grid>
           </Grid>
           <Grid
-            mt={10}
+            sx={{ mt: { xs: 10, lg: 8 } }}
             item
             xs={12}
             lg={6}
             style={{
               display: "flex",
               justifyContent: "center",
-              alignContent: "center",
+              alignItems: "center",
             }}
           >
             {/* progress bars */}

@@ -8,10 +8,6 @@
   src: url("../src/fonts/helvetica.ttf");
 }
 
-.backGroundGif_NightTime {
-  background-image: url("assets/images/gifs/pokemon-nighttime.gif");
-}
-
 .backGroundGif_DayTime {
   background-image: url("assets/images/gifs/pokemon-daytime.gif");
 }
