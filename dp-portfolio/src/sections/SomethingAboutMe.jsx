@@ -202,6 +202,15 @@ export default function SomethingAboutMe({ isDarkMode }) {
             {/* progress bars */}
           </Grid>
         </Grid>
+        <Grid item xs={10} container>
+          <Grid item xs={12}>
+            {/* exprience */}
+            <Grid xs={4}>
+              
+            </Grid>
+            {/* exprience */}
+          </Grid>
+        </Grid>
       </Grid>
     </div>
   );

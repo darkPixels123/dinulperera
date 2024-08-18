@@ -5,12 +5,31 @@ import { Grid } from "@mui/material";
 import UserBrief from "./UserBrief";
 import SomethingAboutMe from "./SomethingAboutMe";
 import lenis from "../components/animations/lenis";
-import Loading from "./Loading";
+
+import upBlack from "../assets/images/btn_icons/upBlack.png";
+import upWhite from "../assets/images/btn_icons/upWhite.png";
 
 export default function Main() {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("selectedTheme") === "dark"
   );
+
+  const [showArrow, setShowArrow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        // Show arrow after scrolling down 100px
+        setShowArrow(true);
+      } else {
+        setShowArrow(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
@@ -27,30 +46,43 @@ export default function Main() {
   };
 
   const handleScroll = (ref) => {
-    if (ref.current) {
-      lenis.scrollTo(ref.current, {
-        offset: -80, // Adjust this value to account for any fixed headers
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      });
-    }
+    const target = ref?.current || document.body;
+    lenis.scrollTo(target, {
+      offset: 0, // Adjust this value to account for any fixed headers
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
   };
 
   return (
     <div className={styles.mainContainer}>
       <Grid container>
-        <div
-          style={{
-            position: "fixed",
-            width: "100px",
-            height: "100px",
-            bottom: 0,
-            right: 0,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        ></div>
+        {showArrow && ( // Conditionally render the arrow button
+          <div
+            style={{
+              position: "fixed",
+              width: "100px",
+              height: "100px",
+              bottom: 0,
+              right: 0,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              className={styles.upArrow}
+              style={{
+                backgroundColor: isDarkMode
+                  ? "rgb(49, 49, 49, 0.7)"
+                  : "rgb(245, 245, 247)",
+              }}
+              onClick={() => handleScroll()} // Scroll to top when arrow is clicked
+            >
+              <img src={isDarkMode ? upWhite : upBlack} alt="Scroll to top" />
+            </div>
+          </div>
+        )}
         {/* navbar */}
         <Grid item xs={12}>
           <Navbar
