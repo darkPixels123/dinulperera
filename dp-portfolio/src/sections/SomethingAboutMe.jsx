@@ -1,9 +1,26 @@
-import { Grid, LinearProgress, linearProgressClasses } from "@mui/material";
+import {
+  Grid,
+  LinearProgress,
+  linearProgressClasses,
+  Box,
+} from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 
 import styles from "../somethingAboutMe.module.css";
 
 import { styled } from "@mui/material/styles";
+
+// images
+import developer1 from "../assets/images/display-images/developer1.jpeg";
+import developer2 from "../assets/images/display-images/developer2.jpeg";
+import developer3 from "../assets/images/display-images/developer3.jpeg";
+import developer4 from "../assets/images/display-images/developer4.jpeg";
+import developer5 from "../assets/images/display-images/developer5.jpeg";
+import developer6 from "../assets/images/display-images/developer6.jpeg";
+
+import designer1 from "../assets/images/display-images/designer1.jpeg";
+import designer2 from "../assets/images/display-images/designer2.jpeg";
+// images
 
 export default function SomethingAboutMe({ isDarkMode }) {
   const sectionRef = useRef(null);
@@ -202,13 +219,165 @@ export default function SomethingAboutMe({ isDarkMode }) {
             {/* progress bars */}
           </Grid>
         </Grid>
-        <Grid item xs={10} container>
-          <Grid item xs={12}>
-            {/* exprience */}
-            <Grid xs={4}>
-              
+        <Grid item xs={1} />
+        <Grid item container mt={8}>
+          <Grid item xs={1} />
+          <Grid item xs={10} container sx={{ gap: { xs: "20px", md: "0px" } }}>
+            {/* exprience and counts small */}
+            <Grid xs={12} sx={{ display: { xs: "block", md: "none" } }}>
+              <div
+                className={`${
+                  isDarkMode ? styles.DarkCounterDiv : styles.LightCounterDiv
+                } ${styles.CounterDivSmall} ${styles.CounterDiv}`}
+              >
+                <div className={`${styles.imgHolder}`}>
+                  <img src={developer6} width={700} />
+                </div>
+                <div className={`${styles.CountSmall} ${styles.Count}`}>
+                  <h3>2 years of</h3>
+                  <h4>Developer Experience</h4>
+                </div>
+              </div>
             </Grid>
-            {/* exprience */}
+            {/* exprience and counts small */}
+            {/* exprience and counts medium */}
+            <Grid
+              md={6}
+              sx={{
+                display: { xs: "none", md: "block" },
+                height: "100%",
+              }}
+            >
+              <div
+                className={`${
+                  isDarkMode ? styles.DarkCounterDiv : styles.LightCounterDiv
+                } ${styles.CounterDivMedium} ${styles.CounterDiv}`}
+                style={{ height: "100%", padding: "0px" }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { md: "column", lg: "row" },
+                    justifyContent: "center",
+                    alignItems: "center",
+                    textAlign: { md: "center", lg: "left" },
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    height: "100%",
+                  }}
+                >
+                  <div className={`${styles.imgHolder}`}>
+                    <img
+                      src={developer1}
+                      style={{ width: "80vw", maxWidth: "280px" }}
+                    />
+                  </div>
+                  <div
+                    className={`${styles.CountMedium} ${styles.Count}`}
+                    style={{ paddingLeft: "20px" }}
+                  >
+                    <h3>2 years of</h3>
+                    <h4>Developer Experience</h4>
+                  </div>
+                </Box>
+              </div>
+            </Grid>
+            {/* exprience and counts medium */}
+            <Grid
+              xs={12}
+              md={6}
+              lg={6}
+              container
+              paddingLeft={2}
+              columnSpacing={2}
+              rowSpacing={2}
+            >
+              <Grid item xs={5} sm={6} lg={4} xl={6}>
+                <div
+                  className={`${
+                    isDarkMode ? styles.DarkCounterDiv : styles.LightCounterDiv
+                  } ${styles.CounterDivMedium} ${styles.CounterDiv}`}
+                  style={{ height: "100px" }}
+                >
+                  <div className={`${styles.CountMedium} ${styles.Count}`}>
+                    <h3>5+</h3>
+                    <h4>Web Projects</h4>
+                  </div>
+                </div>
+              </Grid>
+              <Grid item xs={7} sm={6} lg={4} xl={6}>
+                <div
+                  className={`${
+                    isDarkMode ? styles.DarkCounterDiv : styles.LightCounterDiv
+                  } ${styles.CounterDivMedium} ${styles.CounterDiv}`}
+                  style={{ height: "100px" }}
+                >
+                  <div className={`${styles.CountMedium} ${styles.Count}`}>
+                    <h3>2+</h3>
+                    <h4>Mobile Applications</h4>
+                  </div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={12} lg={4}>
+                <div
+                  className={`${
+                    isDarkMode ? styles.DarkCounterDiv : styles.LightCounterDiv
+                  } ${styles.CounterDivMedium} ${styles.CounterDiv}`}
+                  style={{ height: "100px" }}
+                >
+                  <div
+                    className={`${styles.imgHolder2}`}
+                    style={{ height: "100px" }}
+                  >
+                    <Box
+                      sx={{
+                        display: { xs: "block", lg: "none" },
+                        width: "fit-content",
+                      }}
+                    >
+                      <img src={designer1} height={120} />
+                    </Box>
+                  </div>
+                  <div
+                    className={`${styles.CountMedium} ${styles.Count}`}
+                    style={{
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      paddingLeft: "20px",
+                    }}
+                  >
+                    <h3>2+</h3>
+                    <h4>UI UX Projects</h4>
+                  </div>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={12} lg={12} xl={8}>
+                <div
+                  className={`${
+                    isDarkMode ? styles.DarkCounterDiv : styles.LightCounterDiv
+                  } ${styles.CounterDivMedium} ${styles.CounterDiv}`}
+                  style={{ flexDirection: "row", height: "100px" }}
+                >
+                  <div
+                    className={`${styles.CountMedium} ${styles.Count}`}
+                    style={{
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      paddingRight: "20px",
+                    }}
+                  >
+                    <h3>2+</h3>
+                    <h4>Brand Identity Projects</h4>
+                  </div>
+                  <div
+                    className={`${styles.imgHolder2}`}
+                    style={{ height: "100px" }}
+                  >
+                    <img src={designer2} height={150} />
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
