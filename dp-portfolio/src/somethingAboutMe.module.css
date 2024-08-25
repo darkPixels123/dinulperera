@@ -3,12 +3,6 @@
   src: url("../src/fonts/arial-greek.ttf");
 }
 
-.topicName {
-  font-size: 3rem;
-  font-family: "arial";
-  text-align: left;
-}
-
 .myDesc p {
   text-align: left;
   font-size: 0.9rem;
@@ -24,6 +18,11 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  transition-duration: 200ms;
+}
+
+.progressBarContainer:hover {
+  transform: scale(0.99);
 }
 
 .DarkProgressBarContainer {
@@ -44,6 +43,111 @@
   margin-top: 25px;
 }
 
+<<<<<<< Updated upstream
+=======
+.DarkCounterDiv {
+  background-color: rgb(49, 49, 49, 0.7);
+}
+
+.LightCounterDiv {
+  background-color: rgb(245, 245, 247);
+}
+
+.CounterDivSmall {
+  flex-direction: column;
+}
+
+.CounterDivMedium {
+  flex-direction: row;
+}
+
+.CounterDiv {
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  transition-duration: 200ms;
+}
+
+.CounterDiv:hover {
+  transform: scale(0.98);
+}
+
+.Count {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CountSmall {
+  text-align: center;
+}
+
+.CountMedium {
+  text-align: left;
+}
+
+.Count h3 {
+  font-size: 2.4rem;
+  font-family: "arial";
+  margin: 0;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .topicName {
+    font-size: 1.8rem;
+    font-family: "arial";
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .topicName {
+    font-size: 3rem;
+    font-family: "arial";
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .Count h4 {
+    color: rgba(99, 99, 99, 0.8);
+    font-family: "arial";
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .Count h4 {
+    color: rgba(99, 99, 99, 0.8);
+    font-family: "arial";
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+}
+
+.imgHolder {
+  border-radius: 16px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgHolder2 {
+  border-radius: 16px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+>>>>>>> Stashed changes
 /* progress card container pop animation */
 @keyframes popIn {
   0% {
