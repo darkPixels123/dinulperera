@@ -10,8 +10,6 @@ import styles from "../somethingAboutMe.module.css";
 
 import { styled } from "@mui/material/styles";
 
-<<<<<<< Updated upstream
-=======
 // images
 import developer1 from "../assets/images/display-images/developer1.jpeg";
 import developer6 from "../assets/images/display-images/developer6.jpeg";
@@ -20,7 +18,6 @@ import designer1 from "../assets/images/display-images/designer1.jpeg";
 import designer2 from "../assets/images/display-images/designer2.jpeg";
 // images
 
->>>>>>> Stashed changes
 export default function SomethingAboutMe({ isDarkMode }) {
   const sectionRef = useRef(null);
 
@@ -232,8 +229,6 @@ export default function SomethingAboutMe({ isDarkMode }) {
             {/* progress bars */}
           </Grid>
         </Grid>
-<<<<<<< Updated upstream
-=======
         <Grid item xs={1} />
         <Grid item container mt={8}>
           <Grid item xs={1} />
@@ -402,7 +397,6 @@ export default function SomethingAboutMe({ isDarkMode }) {
             </Grid>
           </Grid>
         </Grid>
->>>>>>> Stashed changes
       </Grid>
     </div>
   );

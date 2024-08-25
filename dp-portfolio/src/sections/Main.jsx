@@ -5,14 +5,10 @@ import { Grid } from "@mui/material";
 import UserBrief from "./UserBrief";
 import SomethingAboutMe from "./SomethingAboutMe";
 import lenis from "../components/animations/lenis";
-<<<<<<< Updated upstream
-import Loading from "./Loading";
-=======
 
 import upBlack from "../assets/images/btn_icons/upBlack.png";
 import upWhite from "../assets/images/btn_icons/upWhite.png";
 import Projects from "./Projects";
->>>>>>> Stashed changes
 
 export default function Main() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -51,29 +47,18 @@ export default function Main() {
     document.body.classList.toggle(styles.darkMode, newDarkModeState);
   };
 
-  const handleScroll = (ref) => {
-<<<<<<< Updated upstream
-    if (ref.current) {
-      lenis.scrollTo(ref.current, {
-        offset: -80, // Adjust this value to account for any fixed headers
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      });
-    }
-=======
+  const handleScroll = (ref = null) => {
     const target = ref?.current || document.body;
     lenis.scrollTo(target, {
-      offset: -90, // Adjust this value to account for any fixed headers
+      offset: ref ? -80 : 0, // Offset only when scrolling to a section
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
->>>>>>> Stashed changes
   };
 
   return (
     <div className={styles.mainContainer}>
       <Grid container>
-<<<<<<< Updated upstream
         <div
           style={{
             position: "fixed",
@@ -86,7 +71,6 @@ export default function Main() {
             alignItems: "center",
           }}
         ></div>
-=======
         {showArrow && ( // Conditionally render the arrow button
           <div
             style={{
@@ -108,13 +92,12 @@ export default function Main() {
                   : "rgb(245, 245, 247)",
                 zIndex: 1000,
               }}
-              onClick={() => handleScroll()} // Scroll to top when arrow is clicked
+              onClick={() => handleScroll(null)} // Scroll to top when arrow is clicked
             >
               <img src={isDarkMode ? upWhite : upBlack} alt="Scroll to top" />
             </div>
           </div>
         )}
->>>>>>> Stashed changes
         {/* navbar */}
         <Grid item xs={12}>
           <Navbar
