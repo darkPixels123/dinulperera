@@ -41,7 +41,7 @@ export default function SideNavbar({
         <DarkMode toggleDarkMode={toggleDarkMode} />
         <h5 onClick={() => onNavigate(sectionRefs.section1Ref)}>About</h5>
         <h5>Tech & Tools</h5>
-        <h5>Projects</h5>
+        <h5 onClick={() => onNavigate(sectionRefs.section2Ref)}>Projects</h5>
         <h5>Hackathons</h5>
         <h5>Contact</h5>
       </div>
