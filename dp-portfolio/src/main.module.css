@@ -16,5 +16,5 @@
 
 .upArrow:hover {
   transform: scale(1.08);
-  /* border: 2px rgba(0, 123, 255) solid; */
+  border: 2px solid rgba(0, 123, 255);
 }
