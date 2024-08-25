@@ -3,6 +3,12 @@
   src: url("../src/fonts/arial-greek.ttf");
 }
 
+.topicName {
+  font-size: 3rem;
+  font-family: "arial";
+  text-align: left;
+}
+
 .myDesc p {
   text-align: left;
   font-size: 0.9rem;
@@ -18,11 +24,6 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  transition-duration: 200ms;
-}
-
-.progressBarContainer:hover {
-  transform: scale(0.99);
 }
 
 .DarkProgressBarContainer {

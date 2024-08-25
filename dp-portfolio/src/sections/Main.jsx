@@ -5,14 +5,9 @@ import { Grid } from "@mui/material";
 import UserBrief from "./UserBrief";
 import SomethingAboutMe from "./SomethingAboutMe";
 import lenis from "../components/animations/lenis";
-<<<<<<< Updated upstream
-import Loading from "./Loading";
-=======
 
 import upBlack from "../assets/images/btn_icons/upBlack.png";
 import upWhite from "../assets/images/btn_icons/upWhite.png";
-import Projects from "./Projects";
->>>>>>> Stashed changes
 
 export default function Main() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -52,41 +47,17 @@ export default function Main() {
   };
 
   const handleScroll = (ref) => {
-<<<<<<< Updated upstream
-    if (ref.current) {
-      lenis.scrollTo(ref.current, {
-        offset: -80, // Adjust this value to account for any fixed headers
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      });
-    }
-=======
     const target = ref?.current || document.body;
     lenis.scrollTo(target, {
-      offset: -90, // Adjust this value to account for any fixed headers
+      offset: 0, // Adjust this value to account for any fixed headers
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
->>>>>>> Stashed changes
   };
 
   return (
     <div className={styles.mainContainer}>
       <Grid container>
-<<<<<<< Updated upstream
-        <div
-          style={{
-            position: "fixed",
-            width: "100px",
-            height: "100px",
-            bottom: 0,
-            right: 0,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        ></div>
-=======
         {showArrow && ( // Conditionally render the arrow button
           <div
             style={{
@@ -103,18 +74,18 @@ export default function Main() {
             <div
               className={styles.upArrow}
               style={{
-                backgroundColor: isDarkMode
-                  ? "rgb(49, 49, 49, 0.7)"
-                  : "rgb(245, 245, 247)",
+                // backgroundColor: isDarkMode
+                //   ? "rgb(49, 49, 49, 0.7)"
+                //   : "rgb(245, 245, 247)",
+                backgroundColor: "rgba(0, 123, 255)",
                 zIndex: 1000,
               }}
               onClick={() => handleScroll()} // Scroll to top when arrow is clicked
             >
-              <img src={isDarkMode ? upWhite : upBlack} alt="Scroll to top" />
+              <img src={isDarkMode ? upWhite : upWhite} alt="Scroll to top" />
             </div>
           </div>
         )}
->>>>>>> Stashed changes
         {/* navbar */}
         <Grid item xs={12}>
           <Navbar
@@ -139,13 +110,6 @@ export default function Main() {
           </section>
         </Grid>
         {/* something about me */}
-        {/* project slideshow */}
-        <Grid item xs={12}>
-          <section id="section3" ref={section2Ref}>
-            <Projects isDarkMode={isDarkMode} />
-          </section>
-        </Grid>
-        {/* project slideshow */}
       </Grid>
     </div>
   );

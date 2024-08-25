@@ -35,9 +35,7 @@ export default function Navbar({
                   About
                 </span>
                 <span>Tech & Tools</span>
-                <span onClick={() => onNavigate(sectionRefs.section2Ref)}>
-                  Projects
-                </span>
+                <span>Projects</span>
                 <span>Hackathons</span>
                 <span>Contact</span>
               </Grid>
