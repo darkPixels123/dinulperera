@@ -8,7 +8,7 @@ import mint3labs from "../../assets/images/carousel/web/mint3labs.png";
 
 export default function CarouselCard({ isDarkMode }) {
   return (
-    <Grid item xs={12} md={6}>
+    <Grid item xs={11}>
       <Box
         sx={{ flexDirection: { xs: "column", md: "row" } }}
         className={`${

@@ -2,6 +2,11 @@ import { Grid, Box } from "@mui/material";
 import React, { useState } from "react";
 import styles from "../projects.module.css";
 
+// Import Swiper Component
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation, Keyboard } from "swiper/modules";
+import "swiper/css";
+
 // components
 import CarouselCard from "../components/cards/CarouselCard";
 // components
@@ -87,8 +92,60 @@ export default function Projects({ isDarkMode }) {
               columnSpacing={4}
               sx={{ rowGap: { xs: "30px", md: "0px" } }}
             >
-              <CarouselCard isDarkMode={isDarkMode} />
-              <CarouselCard isDarkMode={isDarkMode} />
+              <Swiper
+                keyboard={{
+                  enabled: true,
+                }}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                speed={1000}
+                slidesPerView={2}
+                loop={true}
+                spaceBetween={10} // Adjust this value as needed
+                modules={[Autoplay, Pagination, Navigation, Keyboard]}
+                className="mySwiper"
+                style={{ width: "100%", height: "100%" }} // Ensure Swiper takes full space
+              >
+                <SwiperSlide
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CarouselCard isDarkMode={isDarkMode} />
+                </SwiperSlide>
+                <SwiperSlide
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CarouselCard isDarkMode={isDarkMode} />
+                </SwiperSlide>
+                <SwiperSlide
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CarouselCard isDarkMode={isDarkMode} />
+                </SwiperSlide>
+                <SwiperSlide
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CarouselCard isDarkMode={isDarkMode} />
+                </SwiperSlide>
+                <SwiperSlide
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CarouselCard isDarkMode={isDarkMode} />
+                </SwiperSlide>
+              </Swiper>
             </Grid>
           </Grid>
         </Grid>

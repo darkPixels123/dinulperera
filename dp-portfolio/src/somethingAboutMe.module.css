@@ -145,6 +145,22 @@
   align-items: center;
 }
 
+.imgHolder img {
+  transition-duration: 600ms;
+}
+
+.imgHolder img:hover {
+  transform: scale(1.05);
+}
+
+.imgHolder2 img {
+  transition-duration: 600ms;
+}
+
+.imgHolder2 img:hover {
+  transform: scale(1.05);
+}
+
 /* progress card container pop animation */
 @keyframes popIn {
   0% {
