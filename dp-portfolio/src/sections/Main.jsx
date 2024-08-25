@@ -33,6 +33,7 @@ export default function Main() {
 
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
   // Add more refs as needed for each section
 
   useEffect(() => {
@@ -73,13 +74,15 @@ export default function Main() {
             <div
               className={styles.upArrow}
               style={{
-                backgroundColor: isDarkMode
-                  ? "rgb(49, 49, 49, 0.7)"
-                  : "rgb(245, 245, 247)",
+                // backgroundColor: isDarkMode
+                //   ? "rgb(49, 49, 49, 0.7)"
+                //   : "rgb(245, 245, 247)",
+                backgroundColor: "rgba(0, 123, 255)",
+                zIndex: 1000,
               }}
               onClick={() => handleScroll()} // Scroll to top when arrow is clicked
             >
-              <img src={isDarkMode ? upWhite : upBlack} alt="Scroll to top" />
+              <img src={isDarkMode ? upWhite : upWhite} alt="Scroll to top" />
             </div>
           </div>
         )}
@@ -89,7 +92,7 @@ export default function Main() {
             isDarkMode={isDarkMode}
             toggleDarkMode={toggleDarkMode}
             onNavigate={handleScroll}
-            sectionRefs={{ section1Ref, section2Ref }}
+            sectionRefs={{ section1Ref, section2Ref, section3Ref }}
           />
         </Grid>
         {/* navbar */}
