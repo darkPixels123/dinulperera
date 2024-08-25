@@ -50,10 +50,10 @@
 }
 
 .DarkImgHolder img {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .DarkImgHolder img:hover {
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 .LightImgHolder img {
@@ -61,15 +61,24 @@
 }
 
 .LightImgHolder img:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .cardTitle {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   gap: 20px;
+  width: 100%;
+}
+
+.dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-color: #007bff;
 }
 
 .cardDescription {
@@ -106,13 +115,6 @@
   font-weight: 400;
   font-family: monospace;
   text-align: left;
-}
-
-.dot {
-  border-radius: 100px;
-  height: 10px;
-  width: 12px;
-  background-color: #007bff;
 }
 
 .moreBtnSection {

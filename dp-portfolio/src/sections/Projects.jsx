@@ -11,11 +11,31 @@ import "swiper/css";
 import CarouselCard from "../components/cards/CarouselCard";
 // components
 
+// project categories
+import { webProjects } from "../data/projects/web-projects";
+import { contributions } from "../data/projects/contribution-projects";
+import { mobileProjects } from "../data/projects/mobile-projects";
+import { brandProjects } from "../data/projects/brand-projects";
+import { uiuxProjects } from "../data/projects/uiux-projects";
+// project categories
+
 export default function Projects({ isDarkMode }) {
   const [carouselCategory, setCarouselCategory] = useState("Web Projects");
+  const [currentCarousel, setCurrentCarousel] = useState(webProjects);
 
   const handleCarouselCategory = (selectedCategory) => {
     setCarouselCategory(selectedCategory);
+    if (selectedCategory === "Web Projects") {
+      setCurrentCarousel(webProjects);
+    } else if (selectedCategory === "Contributions") {
+      setCurrentCarousel(contributions);
+    } else if (selectedCategory === "Mobile Apps") {
+      setCurrentCarousel(mobileProjects);
+    } else if (selectedCategory === "Brand Identity") {
+      setCurrentCarousel(brandProjects);
+    } else if (selectedCategory === "UI UX") {
+      setCurrentCarousel(uiuxProjects);
+    }
   };
 
   const projectCategories = [
@@ -44,6 +64,7 @@ export default function Projects({ isDarkMode }) {
               <h3 className={styles.topicName}>Projects</h3>
             </Grid>
             <Grid item xs={12}>
+              {/* large device project categories - no carousel */}
               <Box
                 className={`${
                   isDarkMode
@@ -51,6 +72,7 @@ export default function Projects({ isDarkMode }) {
                     : styles.LightCarouselCategories
                 } ${styles.carouselCategories}`}
                 sx={{
+                  display: { xs: "none", md: "flex" },
                   width: { xs: "95%", md: "80%", lg: "60%" },
                   marginLeft: { xs: "auto", md: "0px" },
                   marginRight: { xs: "auto", md: "0px" },
@@ -59,6 +81,7 @@ export default function Projects({ isDarkMode }) {
                 {projectCategories.map((item, index) => {
                   return carouselCategory === item ? (
                     <span
+                      style={{ textWrap: "nowrap" }}
                       className={`${
                         isDarkMode
                           ? styles.DarkCarouselCategorySelected
@@ -73,6 +96,7 @@ export default function Projects({ isDarkMode }) {
                     </span>
                   ) : (
                     <span
+                      style={{ textWrap: "nowrap" }}
                       onClick={() => {
                         handleCarouselCategory(item);
                       }}
@@ -83,68 +107,141 @@ export default function Projects({ isDarkMode }) {
                   );
                 })}
               </Box>
+              {/* large device project categories - no carousel */}
+              {/* small device project categories - carousel   */}
+              <Box
+                className={`${
+                  isDarkMode
+                    ? styles.DarkCarouselCategories
+                    : styles.LightCarouselCategories
+                } ${styles.carouselCategories}`}
+                sx={{
+                  display: { xs: "flex", md: "none" },
+                  width: { xs: "95%", md: "80%" },
+                  marginLeft: { xs: "auto", md: "0px" },
+                  marginRight: { xs: "auto", md: "0px" },
+                }}
+              >
+                <Swiper
+                  pagination={{
+                    clickable: true,
+                  }}
+                  style={{ height: "100%" }}
+                  loop={true}
+                  navigation={true}
+                  modules={[Pagination, Navigation, Keyboard]}
+                  className="mySwiper"
+                  breakpoints={{
+                    340: {
+                      slidesPerView: 2,
+                      spaceBetween: 0,
+                    },
+                    668: {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+                    },
+                    1100: {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+                    },
+                  }}
+                >
+                  {projectCategories.map((item, index) => {
+                    return carouselCategory === item ? (
+                      <SwiperSlide
+                        key={index}
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          height: "100%",
+                          textWrap: "nowrap",
+                        }}
+                      >
+                        <span
+                          className={`${
+                            isDarkMode
+                              ? styles.DarkCarouselCategorySelected
+                              : styles.LightCarouselCategorySelected
+                          }`}
+                          onClick={() => {
+                            handleCarouselCategory(item);
+                          }}
+                        >
+                          {item}
+                        </span>
+                      </SwiperSlide>
+                    ) : (
+                      <SwiperSlide
+                        key={index}
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          height: "100%",
+                          textWrap: "nowrap",
+                        }}
+                      >
+                        <span
+                          onClick={() => {
+                            handleCarouselCategory(item);
+                          }}
+                        >
+                          {item}
+                        </span>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </Box>
+              {/* small device project categories - carousel   */}
             </Grid>
-            <Grid
-              item
-              xs={12}
-              mt={4}
-              container
-              columnSpacing={4}
-              sx={{ rowGap: { xs: "30px", md: "0px" } }}
-            >
+            <Grid item xs={12} mt={4} container>
               <Swiper
                 keyboard={{
                   enabled: true,
                 }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 speed={1000}
-                slidesPerView={2}
+                pagination={{
+                  clickable: true,
+                }}
                 loop={true}
-                spaceBetween={10} // Adjust this value as needed
+                navigation={true}
                 modules={[Autoplay, Pagination, Navigation, Keyboard]}
                 className="mySwiper"
-                style={{ width: "100%", height: "100%" }} // Ensure Swiper takes full space
+                style={{ width: "100%", height: "100%" }}
+                breakpoints={{
+                  340: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                  },
+                  868: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  1100: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                }}
               >
-                <SwiperSlide
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <CarouselCard isDarkMode={isDarkMode} />
-                </SwiperSlide>
-                <SwiperSlide
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <CarouselCard isDarkMode={isDarkMode} />
-                </SwiperSlide>
-                <SwiperSlide
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <CarouselCard isDarkMode={isDarkMode} />
-                </SwiperSlide>
-                <SwiperSlide
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <CarouselCard isDarkMode={isDarkMode} />
-                </SwiperSlide>
-                <SwiperSlide
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <CarouselCard isDarkMode={isDarkMode} />
-                </SwiperSlide>
+                {currentCarousel.map((item, index) => {
+                  return (
+                    <SwiperSlide
+                      key={index}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <CarouselCard
+                        isDarkMode={isDarkMode}
+                        projectDetails={item}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
               </Swiper>
             </Grid>
           </Grid>
