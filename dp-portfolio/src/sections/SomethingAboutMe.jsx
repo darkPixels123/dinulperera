@@ -10,17 +10,18 @@ import styles from "../somethingAboutMe.module.css";
 
 import { styled } from "@mui/material/styles";
 
-<<<<<<< Updated upstream
-=======
 // images
 import developer1 from "../assets/images/display-images/developer1.jpeg";
+import developer2 from "../assets/images/display-images/developer2.jpeg";
+import developer3 from "../assets/images/display-images/developer3.jpeg";
+import developer4 from "../assets/images/display-images/developer4.jpeg";
+import developer5 from "../assets/images/display-images/developer5.jpeg";
 import developer6 from "../assets/images/display-images/developer6.jpeg";
 
 import designer1 from "../assets/images/display-images/designer1.jpeg";
 import designer2 from "../assets/images/display-images/designer2.jpeg";
 // images
 
->>>>>>> Stashed changes
 export default function SomethingAboutMe({ isDarkMode }) {
   const sectionRef = useRef(null);
 
@@ -137,24 +138,19 @@ export default function SomethingAboutMe({ isDarkMode }) {
             container
             style={{ alignItems: "flex-start" }}
           >
-            <Grid
-              item
-              xs={12}
-              className={styles.myDesc}
-              sx={{ marginTop: { xs: "50px", md: "-30px" } }}
-            >
+            <Grid item xs={12} className={styles.myDesc}>
               <h3 className={styles.topicName}>Something About Myself</h3>
               {/* something about me description */}
-              <p style={{ marginTop: "30px" }}>
+              <p style={{ marginTop: "60px" }}>
                 As a motivated software developer and enthusiastic graphic
                 designer, I bring a unique combination of creative and technical
                 expertise to every project. My in-depth knowledge of programming
-                languages, including JavaScript, PHP, Java enables me to develop
-                high-quality, efficient solutions tailored to complex software
-                development needs. With extensive experience across diverse
-                industries such as e-commerce, education, and healthcare, I have
-                successfully completed a wide range of projects, from responsive
-                web designs to comprehensive full-stack applications.
+                languages, including Java, enables me to develop high-quality,
+                efficient solutions tailored to complex software development
+                needs. With extensive experience across diverse industries such
+                as e-commerce, education, and healthcare, I have successfully
+                completed a wide range of projects, from responsive web designs
+                to comprehensive full-stack applications
               </p>
               <p>
                 My commitment to continuous professional development ensures
@@ -163,22 +159,13 @@ export default function SomethingAboutMe({ isDarkMode }) {
                 meet but exceed client expectations. This dedication to
                 excellence is reflected in my proven track record of delivering
                 outstanding results, underscored by a deep technical acumen and
-                a relentless focus on achieving project success.
-              </p>
-              <p>
-                My commitment to continuous professional development ensures
-                that I stay at the forefront of industry advancements, allowing
-                me to consistently deliver innovative solutions that not only
-                meet but exceed client expectations. This dedication to
-                excellence is reflected in my proven track record of delivering
-                outstanding results, underscored by a deep technical acumen and
-                a relentless focus on achieving project success.
+                a relentless focus on achieving project success
               </p>
               {/* something about me description */}
             </Grid>
           </Grid>
           <Grid
-            sx={{ mt: { xs: 3, lg: 8 } }}
+            sx={{ mt: { xs: 10, lg: 8 } }}
             item
             xs={12}
             lg={6}
@@ -232,8 +219,6 @@ export default function SomethingAboutMe({ isDarkMode }) {
             {/* progress bars */}
           </Grid>
         </Grid>
-<<<<<<< Updated upstream
-=======
         <Grid item xs={1} />
         <Grid item container mt={8}>
           <Grid item xs={1} />
@@ -246,7 +231,7 @@ export default function SomethingAboutMe({ isDarkMode }) {
                 } ${styles.CounterDivSmall} ${styles.CounterDiv}`}
               >
                 <div className={`${styles.imgHolder}`}>
-                  <img src={developer6} width={700} alt="developer" />
+                  <img src={developer6} width={700} />
                 </div>
                 <div className={`${styles.CountSmall} ${styles.Count}`}>
                   <h3>2 years of</h3>
@@ -285,7 +270,6 @@ export default function SomethingAboutMe({ isDarkMode }) {
                     <img
                       src={developer1}
                       style={{ width: "80vw", maxWidth: "280px" }}
-                      alt="developer"
                     />
                   </div>
                   <div
@@ -315,10 +299,7 @@ export default function SomethingAboutMe({ isDarkMode }) {
                   } ${styles.CounterDivMedium} ${styles.CounterDiv}`}
                   style={{ height: "100px" }}
                 >
-                  <div
-                    className={`${styles.CountMedium} ${styles.Count}`}
-                    style={{ textAlign: "center" }}
-                  >
+                  <div className={`${styles.CountMedium} ${styles.Count}`}>
                     <h3>5+</h3>
                     <h4>Web Projects</h4>
                   </div>
@@ -331,10 +312,7 @@ export default function SomethingAboutMe({ isDarkMode }) {
                   } ${styles.CounterDivMedium} ${styles.CounterDiv}`}
                   style={{ height: "100px" }}
                 >
-                  <div
-                    className={`${styles.CountMedium} ${styles.Count}`}
-                    style={{ textAlign: "center" }}
-                  >
+                  <div className={`${styles.CountMedium} ${styles.Count}`}>
                     <h3>2+</h3>
                     <h4>Mobile Applications</h4>
                   </div>
@@ -357,7 +335,7 @@ export default function SomethingAboutMe({ isDarkMode }) {
                         width: "fit-content",
                       }}
                     >
-                      <img src={designer1} height={120} alt="designer" />
+                      <img src={designer1} height={120} />
                     </Box>
                   </div>
                   <div
@@ -395,14 +373,13 @@ export default function SomethingAboutMe({ isDarkMode }) {
                     className={`${styles.imgHolder2}`}
                     style={{ height: "100px" }}
                   >
-                    <img src={designer2} height={150} alt="designer" />
+                    <img src={designer2} height={150} />
                   </div>
                 </div>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
->>>>>>> Stashed changes
       </Grid>
     </div>
   );
