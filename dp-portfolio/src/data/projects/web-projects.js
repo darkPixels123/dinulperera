@@ -45,7 +45,7 @@ export const webProjects = [
     },
     {
         id: "project5",
-        name: "Bloom - mental health application - Admin Bashboard",
+        name: "Bloom - Mental health application - Admin Dashboard",
         category: "Web Projects",
         description: "Me(leader) and my team developed a mental health mobile app , and I built the admin dashboard of this project which controls the resources and activities of the app.",
         technologies: ["HTML", "CSS", "JavaScript", "React", "Express", "Node", "MongoDB", "MaterialUI", "Firebase"],

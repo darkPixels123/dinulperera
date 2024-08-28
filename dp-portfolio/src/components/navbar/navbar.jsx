@@ -4,6 +4,9 @@ import { Grid } from "@mui/material";
 import DarkMode from "../darkMode/DarkMode";
 import SideNavbar from "../side-navbar/sideNavbar";
 
+import dpBlackLogo from "../../assets/images/logos/dp Logo-black.png";
+import dpWhiteLogo from "../../assets/images/logos/dp Logo-white.png";
+
 export default function Navbar({
   isDarkMode,
   toggleDarkMode,
@@ -28,7 +31,13 @@ export default function Navbar({
           >
             <Grid container className={styles.navbarContent}>
               {/* mylogo */}
-              <Grid item lg={5} className={styles.myLogoContainer}></Grid>
+              <Grid item lg={5} className={styles.myLogoContainer}>
+                <img
+                  src={isDarkMode ? dpWhiteLogo : dpBlackLogo}
+                  alt="dpLogo"
+                  width={40}
+                />
+              </Grid>
               {/* mylogo */}
               <Grid item lg={6} className={styles.sectionsContainer}>
                 <span onClick={() => onNavigate(sectionRefs.section1Ref)}>
@@ -75,7 +84,13 @@ export default function Navbar({
             }}
           >
             {/* mylogo */}
-            <Grid item xs={4} className={styles.myLogoContainer}></Grid>
+            <Grid item xs={4} className={styles.myLogoContainer}>
+              <img
+                src={isDarkMode ? dpWhiteLogo : dpBlackLogo}
+                alt="dpLogo"
+                width={40}
+              />
+            </Grid>
             {/* mylogo */}
             <Grid item xs={6} />
             <Grid item xs={2} className={styles.collapseIconContainer}>

@@ -4,7 +4,7 @@ import devLabs from "../../assets/images/carousel/other/devlabs.png"
 export const contributions = [
     {
         id: "project1",
-        name: "IEE | Rise Up Mora 23 - Official Website",
+        name: "IEEE | Rise Up Mora 23 - Official Website",
         category: "Contributions",
         description: "Personalized candidate profiles, company dashboards for reviewing CV'S, and an adin dashboard for system adminsitration, ensuring smooth coordination and feedback mechanisms for internships",
         technologies: ["TypeScript", "CSS", "Firebase", "React"],

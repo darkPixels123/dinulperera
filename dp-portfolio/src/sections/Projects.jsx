@@ -220,7 +220,7 @@ export default function Projects({ isDarkMode }) {
                     slidesPerView: 1,
                     spaceBetween: 10,
                   },
-                  1100: {
+                  1250: {
                     slidesPerView: 2,
                     spaceBetween: 10,
                   },

@@ -54,7 +54,7 @@ export default function SomethingAboutMe({ isDarkMode }) {
     },
     {
       skillName: "Web Development",
-      percentage: 90,
+      percentage: 80,
     },
     {
       skillName: "Mobile Application Development",
@@ -62,7 +62,7 @@ export default function SomethingAboutMe({ isDarkMode }) {
     },
     {
       skillName: "UI UX Design",
-      percentage: 80,
+      percentage: 85,
     },
     {
       skillName: "Graphic Design",
