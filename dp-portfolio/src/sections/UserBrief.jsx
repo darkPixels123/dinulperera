@@ -15,8 +15,12 @@ import blackDownload from "../assets/images/btn_icons/downloadBlack.png";
 import { socialMediaInfo } from "./socialMediaInfo";
 // social media info
 
+// sri lanka logo
+import slLogo from "../assets/images/logos/slLogo.png";
+// sri lanka logo
+
 import myImg from "../assets/images/profile-photos/my-image1.png";
-import { Box, Grid } from "@mui/material";
+import { Badge, Box, Grid, styled } from "@mui/material";
 
 import dayTimeGif from "../assets/images/gifs/pokemon-daytime2.gif";
 import nightTimeGif from "../assets/images/gifs/pokemon-nighttime2.gif";
@@ -71,6 +75,13 @@ export default function UserBrief({ isDarkMode }) {
     };
   }, [introMsgTrigger]);
 
+  const SmallAvatar = styled(Avatar)(({ theme }) => ({
+    width: 21,
+    height: 21,
+    backgroundColor: isDarkMode ? "rgb(18, 18, 18)" : "rgb(255, 255, 255)",
+    padding: 5,
+  }));
+
   return (
     <div>
       {/* user card  */}
@@ -112,20 +123,27 @@ export default function UserBrief({ isDarkMode }) {
             <Grid item xs={12}>
               {/* user card  */}
               <div className={styles.userProfileCard}>
-                {/* image */}
-                <Avatar
-                  alt="Remy Sharp"
-                  src={myImg}
-                  sx={{
-                    width: 80,
-                    height: 80,
-                    border: "solid rgb(0, 122, 255) 4px",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={() => {
-                    setIntroMsgTrigger(!introMsgTrigger);
-                  }}
-                />
+                <Badge
+                  overlap="circular"
+                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                  badgeContent={<SmallAvatar alt="Sri Lanka" src={slLogo} />}
+                >
+                  {/* image */}
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={myImg}
+                    sx={{
+                      width: 80,
+                      height: 80,
+                      border: "solid rgb(0, 122, 255) 4px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={() => {
+                      setIntroMsgTrigger(!introMsgTrigger);
+                    }}
+                  />
+                </Badge>
+
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <div className={`${styles.yours} ${styles.messages}`}>
                     <div className={`${styles.message} ${styles.last}`}>
