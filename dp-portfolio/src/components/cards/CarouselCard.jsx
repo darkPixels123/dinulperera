@@ -1,10 +1,43 @@
 import { Box, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../carouselCard.module.css";
+import Drawer from "@mui/material/Drawer";
 
 export default function CarouselCard({ isDarkMode, projectDetails }) {
+  const [state, setState] = useState({
+    bottom: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setState({ ...state, [anchor]: open });
+  };
+
   return (
     <>
+      <Drawer
+        anchor={"bottom"}
+        open={state["bottom"]}
+        onClose={toggleDrawer("bottom", false)}
+      >
+        <Box
+          sx={{
+            width: "auto",
+            height: 750,
+            backgroundColor: isDarkMode
+              ? "rgb(49, 49, 49)"
+              : "rgb(239, 241, 241, 0.7)",
+          }}
+          role="presentation"
+          onClick={toggleDrawer("bottom", false)}
+          onKeyDown={toggleDrawer("bottom", false)}
+        ></Box>
+      </Drawer>
       <Grid item xs={11}>
         <Box
           sx={{
@@ -74,6 +107,7 @@ export default function CarouselCard({ isDarkMode, projectDetails }) {
                 className={`${
                   isDarkMode ? styles.DarkMoreBtn : styles.LightMoreBtn
                 } ${styles.moreBtn}`}
+                onClick={toggleDrawer("bottom", true)}
               >
                 VIEW MORE
               </div>

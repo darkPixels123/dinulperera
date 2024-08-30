@@ -92,7 +92,7 @@ export default function UserBrief({ isDarkMode }) {
           flexDirection: "column",
           position: "relative",
         }}
-        sx={{ height: { md: "75vh" } }}
+        sx={{ height: { md: "85vh" } }}
       >
         <Grid
           style={{ width: "100%", position: "relative" }}
@@ -174,12 +174,7 @@ export default function UserBrief({ isDarkMode }) {
                 <span ref={positions} className={styles.positions} />
               </div>
             </Grid>
-            <Grid
-              item
-              container
-              xs={12}
-              sx={{ marginTop: { xs: "-90px", md: "0px" } }}
-            >
+            <Grid item container xs={12} sx={{ marginTop: { xs: "0px" } }}>
               {/* something about me download my cv section*/}
               <Grid item container xs={12} lg={6}>
                 <Grid item xs={12}>
@@ -195,16 +190,16 @@ export default function UserBrief({ isDarkMode }) {
                     </p>
                   </div>
                 </Grid>
-                <Grid item container>
+                
                   <Grid
                     item
                     xs={12}
                     sm={5}
-                    lg={5}
+                    md={5}
                     mt={2}
                     sx={{
                       display: { xs: "flex" },
-                      justifyContent: { xs: "center", lg: "start" },
+                      justifyContent: { xs: "center", sm: "start" },
                       alignItems: { xs: "center" },
                     }}
                   >
@@ -229,11 +224,11 @@ export default function UserBrief({ isDarkMode }) {
                     item
                     xs={12}
                     sm={5}
-                    lg={5}
+                    md={5}
                     mt={2}
                     sx={{
                       display: { xs: "flex" },
-                      justifyContent: { xs: "center", md: "start" },
+                      justifyContent: { xs: "center", sm: "start" },
                       alignItems: { xs: "center" },
                     }}
                   >
@@ -241,7 +236,7 @@ export default function UserBrief({ isDarkMode }) {
                       <div class={styles.bouncingDot}></div> Available for work
                     </div>
                   </Grid>
-                </Grid>
+                
               </Grid>
               <Grid item xs={1} />
               <Grid
