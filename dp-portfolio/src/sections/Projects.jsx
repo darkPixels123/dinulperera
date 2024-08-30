@@ -232,7 +232,7 @@ export default function Projects({ isDarkMode }) {
                       key={index}
                       style={{
                         display: "flex",
-                        justifyContent: "space-between",
+                        justifyContent: "center",
                       }}
                     >
                       <CarouselCard

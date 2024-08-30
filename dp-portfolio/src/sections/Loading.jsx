@@ -31,7 +31,7 @@ export default function Loading({ isDarkMode }) {
             flexDirection: "column",
           }}
         >
-          Please wait ...
+          {/* nothing to say in loading */}
         </h4>
         <div className={styles.loader}>
           <div></div>
