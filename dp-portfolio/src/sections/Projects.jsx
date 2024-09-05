@@ -117,9 +117,11 @@ export default function Projects({ isDarkMode }) {
                 } ${styles.carouselCategories}`}
                 sx={{
                   display: { xs: "flex", md: "none" },
-                  width: { xs: "95%", md: "80%" },
+                  width: { xs: "90%", md: "80%" },
                   marginLeft: { xs: "auto", md: "0px" },
                   marginRight: { xs: "auto", md: "0px" },
+                  borderLeft: "5px #007bff solid",
+                  borderRight: "5px #007bff solid",
                 }}
               >
                 <Swiper
