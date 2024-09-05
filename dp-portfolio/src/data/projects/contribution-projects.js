@@ -7,7 +7,7 @@ export const contributions = [
         name: "IEEE | Rise Up Mora 23 - Official Website",
         category: "Contributions",
         colaboration: "group",
-        members: ["Kalhara", "Madhura"],
+        members: [{ name: "Kalhara JA", linkedIn: "https://www.linkedin.com/in/kalhara-ja/", image: "" }, { name: "Madhura Jayashanka", linkedIn: "https://www.linkedin.com/in/madhurajayashanka/", image: "" }, { name: "Malith Weeraratne", linkedIn: "https://www.linkedin.com/in/malith-weeraratne-780550268/", image: "" }, { name: "Sathiska Sasindu", linkedIn: "https://www.linkedin.com/in/sathiska-sasindu-749709273/", image: "" }, { name: "Ruchith Samarawickrama", linkedIn: "https://www.linkedin.com/in/ruchith-samarawickrama-83098524a/", image: "" }, { name: "Dinuka Malitha", linkedIn: "https://www.linkedin.com/in/dinuka-malitha/", image: "" }],
         description: "Personalized candidate profiles, company dashboards for reviewing CV'S, and an adin dashboard for system adminsitration, ensuring smooth coordination and feedback mechanisms for internships",
         technologies: ["TypeScript", "CSS", "Firebase", "React"],
         link: "https://riseupmora.lk/",

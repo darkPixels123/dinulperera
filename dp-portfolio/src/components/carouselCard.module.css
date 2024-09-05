@@ -57,10 +57,6 @@
   opacity: 0.9;
 }
 
-.LightImgHolder img:hover {
-  opacity: 0.5;
-}
-
 .cardTitle {
   display: flex;
   flex-direction: row;

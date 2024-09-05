@@ -92,19 +92,22 @@ export default function UserBrief({ isDarkMode }) {
           flexDirection: "column",
           position: "relative",
         }}
-        sx={{ height: { md: "85vh" } }}
+        sx={{ height: { sm: "85vh" } }}
       >
         <Grid
           style={{ width: "100%", position: "relative" }}
           sx={{
-            display: { xs: "none", md: "block" },
+            display: { xs: "none", sm: "flex" },
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
           }}
         >
           <img
             alt="animation gif"
             src={isDarkMode ? nightTimeGif : dayTimeGif}
             style={{
-              width: "50vw",
+              height: "50vh",
               marginLeft: "auto",
               marginRight: "auto",
               opacity: 0.2,
@@ -115,7 +118,7 @@ export default function UserBrief({ isDarkMode }) {
           item
           container
           sx={{
-            position: { xs: "relative", md: "absolute" },
+            position: { xs: "relative", sm: "absolute" },
           }}
         >
           <Grid item xs={1} />
@@ -190,53 +193,52 @@ export default function UserBrief({ isDarkMode }) {
                     </p>
                   </div>
                 </Grid>
-                
-                  <Grid
-                    item
-                    xs={12}
-                    sm={5}
-                    md={5}
-                    mt={2}
-                    sx={{
-                      display: { xs: "flex" },
-                      justifyContent: { xs: "center", sm: "start" },
-                      alignItems: { xs: "center" },
-                    }}
+
+                <Grid
+                  item
+                  xs={12}
+                  sm={5}
+                  md={5}
+                  mt={2}
+                  sx={{
+                    display: { xs: "flex" },
+                    justifyContent: { xs: "center", sm: "start" },
+                    alignItems: { xs: "center" },
+                  }}
+                >
+                  <div
+                    className={`${
+                      isDarkMode
+                        ? styles.DarkdownloadResumeBtn
+                        : styles.LightdownloadResumeBtn
+                    } ${styles.downloadBtn}`}
+                    onClick={downloadResume}
                   >
-                    <div
-                      className={`${
-                        isDarkMode
-                          ? styles.DarkdownloadResumeBtn
-                          : styles.LightdownloadResumeBtn
-                      } ${styles.downloadBtn}`}
-                      onClick={downloadResume}
-                    >
-                      Download Resume
-                      <div>
-                        <img
-                          src={isDarkMode ? whiteDownload : blackDownload}
-                          alt="downloadBtn"
-                        />
-                      </div>
+                    Download Resume
+                    <div>
+                      <img
+                        src={isDarkMode ? whiteDownload : blackDownload}
+                        alt="downloadBtn"
+                      />
                     </div>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={5}
-                    md={5}
-                    mt={2}
-                    sx={{
-                      display: { xs: "flex" },
-                      justifyContent: { xs: "center", sm: "start" },
-                      alignItems: { xs: "center" },
-                    }}
-                  >
-                    <div className={styles.availableDiv}>
-                      <div class={styles.bouncingDot}></div> Available for work
-                    </div>
-                  </Grid>
-                
+                  </div>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={5}
+                  md={5}
+                  mt={2}
+                  sx={{
+                    display: { xs: "flex" },
+                    justifyContent: { xs: "center", sm: "start" },
+                    alignItems: { xs: "center" },
+                  }}
+                >
+                  <div className={styles.availableDiv}>
+                    <div class={styles.bouncingDot}></div> Available for work
+                  </div>
+                </Grid>
               </Grid>
               <Grid item xs={1} />
               <Grid

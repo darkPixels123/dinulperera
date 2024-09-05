@@ -12,6 +12,10 @@ export default function CarouselCard({ isDarkMode, projectDetails }) {
     bottom: false,
   });
 
+  function navigateToProfile(link) {
+    window.open(link, "_blank");
+  }
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -57,7 +61,7 @@ export default function CarouselCard({ isDarkMode, projectDetails }) {
         <Box
           sx={{
             width: "auto",
-            height: { xs: "fit-content", lg: "100vh" },
+            height: { xs: "100vh" },
             backgroundColor: isDarkMode
               ? "rgb(19,19,19)"
               : "rgb(239, 241, 241, 0.7)",
@@ -195,18 +199,26 @@ export default function CarouselCard({ isDarkMode, projectDetails }) {
                         <h4>Description</h4>
                         <p>{projectDetails.description}</p>
                       </Grid>
+
                       {projectDetails.colaboration === "group" &&
                       projectDetails.members.length > 0 ? (
                         <Grid item xs={12}>
                           <h4>Group Members</h4>
                           <div className={styles.techTagContainer}>
-                            <AvatarGroup>
+                            <AvatarGroup max={20}>
                               {projectDetails.members.map((item, index) => {
                                 return (
                                   <Avatar
                                     key={index}
-                                    alt={item}
+                                    alt={item.name}
                                     src="/static/images/avatar/1.jpg"
+                                    sx={{
+                                      bgcolor: " #007bff",
+                                      cursor: "pointer",
+                                    }}
+                                    onClick={() => {
+                                      navigateToProfile(item.linkedIn);
+                                    }}
                                   />
                                 );
                               })}
