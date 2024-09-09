@@ -9,6 +9,7 @@ import lenis from "../components/animations/lenis";
 import upBlack from "../assets/images/btn_icons/upBlack.png";
 import upWhite from "../assets/images/btn_icons/upWhite.png";
 import Projects from "./Projects";
+import TechAndTools from "./TechAndTools";
 
 export default function Main() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -122,6 +123,13 @@ export default function Main() {
           </section>
         </Grid>
         {/* something about me */}
+        {/* Technologies and Tools */}
+        <Grid item xs={12}>
+          <section id="section4" ref={section3Ref}>
+            <TechAndTools isDarkMode={isDarkMode} />
+          </section>
+        </Grid>
+        {/* Technologies and Tools */}
         {/* project slideshow */}
         <Grid item xs={12}>
           <section id="section3" ref={section2Ref}>

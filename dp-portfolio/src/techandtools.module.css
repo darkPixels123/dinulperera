@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "arial";
+  src: url("../src/fonts/arial-greek.ttf");
+}
+
+@font-face {
+  font-family: "helvetica";
+  src: url("../src/fonts/helvetica.ttf");
+}
+
+@media only screen and (max-width: 600px) {
+  .topicName {
+    font-size: 1.8rem;
+    font-family: "arial";
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .topicName {
+    font-size: 3rem;
+    font-family: "arial";
+    text-align: left;
+    width: 30vw;
+  }
+}
+
+.techName {
+  font-size: 1.2rem;
+  font-family: "arial";
+  text-align: left;
+}
+
+.developmentToolsSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.designToolsSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.techCard1 {
+  width: 370px;
+  height: 140px;
+  border-radius: 15px;
+  transition-duration: 400ms;
+}
+
+.techCard1 span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.darkTechCard {
+  background-color: rgb(49, 49, 49, 0.7);
+}
+
+.lightTechCard {
+  background-color: rgb(245, 245, 247, 0.7);
+}
+
+.techCard1:hover {
+  transform: scale(0.98);
+}
+
+.toolDescription {
+  font-size: 0.8rem;
+  color: rgb(157, 157, 157);
+  text-align: start;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.darkTxt {
+  color: black;
+}
+
+.lightTxt {
+  color: white;
+}
+
+.exploreBtn {
+  border-radius: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition-duration: 400ms;
+  cursor: pointer;
+}
+
+.exploreBtn:hover {
+  background-color: #007bff;
+  color: white;
+}

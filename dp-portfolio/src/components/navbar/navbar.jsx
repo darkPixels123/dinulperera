@@ -43,7 +43,9 @@ export default function Navbar({
                 <span onClick={() => onNavigate(sectionRefs.section1Ref)}>
                   About
                 </span>
-                <span>Tech & Tools</span>
+                <span onClick={() => onNavigate(sectionRefs.section3Ref)}>
+                  Tech & Tools
+                </span>
                 <span onClick={() => onNavigate(sectionRefs.section2Ref)}>
                   Projects
                 </span>

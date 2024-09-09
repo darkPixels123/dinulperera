@@ -73,7 +73,7 @@ export default function Projects({ isDarkMode }) {
                 } ${styles.carouselCategories}`}
                 sx={{
                   display: { xs: "none", md: "flex" },
-                  width: { xs: "95%", md: "80%", lg: "60%" },
+                  width: "fit-content",
                   marginLeft: { xs: "auto", md: "0px" },
                   marginRight: { xs: "auto", md: "0px" },
                 }}
