@@ -277,13 +277,14 @@ export default function CarouselCard({ isDarkMode, projectDetails }) {
               marginRight: "auto",
             }}
           >
-            <div
+            <Box
               className={`${
                 isDarkMode ? styles.DarkImgHolder : styles.LightImgHolder
               } ${styles.imgHolder}`}
+              sx={{ width: { xs: "270px", sm: "310px" } }}
             >
               <img src={projectDetails.image} width={450} alt="card-image" />
-            </div>
+            </Box>
           </Box>
           <Box
             className={styles.titleAndDesc}

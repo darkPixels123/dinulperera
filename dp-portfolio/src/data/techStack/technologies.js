@@ -3,6 +3,9 @@ import express from "../../assets/images/technologies/express.png"
 import nodejs from "../../assets/images/technologies/nodejs.png"
 import materialui from "../../assets/images/technologies/materialui.png"
 import bootsrap from "../../assets/images/technologies/bootstrap.png"
+import firebase from "../../assets/images/technologies/firebase.png"
+import mysql from "../../assets/images/technologies/mysql.png"
+import mongodb from "../../assets/images/technologies/mongodb.png"
 import java from "../../assets/images/technologies/java.png"
 import php from "../../assets/images/technologies/php.png"
 import CLanguage from "../../assets/images/technologies/C.png"
@@ -45,7 +48,7 @@ export const technologies = [
         id: "tech5",
         name: "MaterialUI",
         category: "technologies",
-        description: "aterial UI provides an optional CssBaseline component. It fixes some inconsistencies across browsers and devices while providing resets that are better tailored to fit Material UI than alternative global style sheets like normalize.css.",
+        description: "Material UI provides an optional CssBaseline component. It fixes some inconsistencies across browsers and devices while providing resets that are better tailored to fit Material UI than alternative global style sheets like normalize.css.",
         link: "https://mui.com/material-ui/getting-started/",
         image: materialui,
     },
@@ -59,6 +62,30 @@ export const technologies = [
     },
     {
         id: "tech7",
+        name: "MongoDB",
+        category: "technologies",
+        description: "MongoDB is built on a scale-out architecture that has become popular with developers of all kinds for developing scalable applications with evolving data schemas. As a document database, MongoDB makes it easy for developers to store structured or unstructured data. It uses a JSON-like format to store documents.",
+        link: "https://www.mongodb.com/docs/",
+        image: mongodb,
+    },
+    {
+        id: "tech8",
+        name: "Firebase",
+        category: "technologies",
+        description: "Firebase provides a secure and easy way for users to sign into their app. Developers can use Firebase Authentication to support email and password login, Google Sign-In, Facebook Login and more. Realtime Database.",
+        link: "https://firebase.google.com/docs",
+        image: firebase,
+    },
+    {
+        id: "tech9",
+        name: "MySQL",
+        category: "technologies",
+        description: "MySQL is used to store data in tables that map to objects. Each table has a schema defining what columns each row of the table will have. Developers can reliably store and retrieve many data types, including text, numbers, dates, times, and even JSON.",
+        link: "https://dev.mysql.com/doc/",
+        image: mysql,
+    },
+    {
+        id: "tech10",
         name: "Java",
         category: "technologies",
         description: "Java is a widely-used programming language for coding web applications. It has been a popular choice among developers for over two decades, with millions of Java applications in use today. Java is a multi-platform, object-oriented, and network-centric language that can be used as a platform in itself.",
@@ -66,7 +93,7 @@ export const technologies = [
         image: java,
     },
     {
-        id: "tech8",
+        id: "tech11",
         name: "PHP",
         category: "technologies",
         description: "PHP is a programming language used to script websites that are dynamic and interactive. You'll find it in various types of web applications, from e-commerce websites to CRM systems like HubSpot and Salesforce. The term PHP stands for PHP Hypertext Preprocessor.",
@@ -74,15 +101,15 @@ export const technologies = [
         image: php,
     },
     {
-        id: "tech9",
+        id: "tech12",
         name: "C",
         category: "technologies",
-        description: "It provides a straightforward, consistent, powerful interface for programming systems. That's why the C language is widely used for developing system software, application software, and embedded systems. The C programming language has been highly influential, and many other languages have been derived from it.",
+        description: "C Language provides a straightforward, consistent, powerful interface for programming systems. That's why the C language is widely used for developing system software, application software, and embedded systems. The C programming language has been highly influential, and many other languages have been derived from it.",
         link: "https://devdocs.io/c/",
         image: CLanguage,
     },
     {
-        id: "tech10",
+        id: "tech13",
         name: "Python",
         category: "technologies",
         description: "Python is often used as a support language for software developers, for build control and management, testing, and in many other ways. SCons for build control. Buildbot and Apache Gump for automated continuous compilation and testing. Roundup or Trac for bug tracking and project management.",

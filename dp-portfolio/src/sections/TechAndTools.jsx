@@ -81,7 +81,7 @@ export default function TechAndTools({ isDarkMode }) {
                             sx={{
                               display: "flex",
                               justifyContent: "center",
-                              alignItems: "center",
+                              alignItems: "start",
                             }}
                           >
                             <img
@@ -126,7 +126,7 @@ export default function TechAndTools({ isDarkMode }) {
                                   navigateToSite(item.link);
                                 }}
                               >
-                                explore
+                                docs
                               </span>
                             </Box>
                           </Grid>
@@ -148,7 +148,6 @@ export default function TechAndTools({ isDarkMode }) {
                 border: "none",
                 boxShadow: "none",
               }}
-              defaultExpanded
             >
               <AccordionSummary
                 expandIcon={
@@ -251,7 +250,6 @@ export default function TechAndTools({ isDarkMode }) {
                 border: "none",
                 boxShadow: "none",
               }}
-              defaultExpanded
             >
               <AccordionSummary
                 expandIcon={
@@ -357,7 +355,6 @@ export default function TechAndTools({ isDarkMode }) {
                 border: "none",
                 boxShadow: "none",
               }}
-              defaultExpanded
             >
               <AccordionSummary
                 expandIcon={
