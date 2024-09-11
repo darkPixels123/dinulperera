@@ -44,7 +44,7 @@ export default function SideNavbar({
           Tech & Tools
         </h5>
         <h5 onClick={() => onNavigate(sectionRefs.section2Ref)}>Projects</h5>
-        <h5>Hackathons</h5>
+        <h5 onClick={() => onNavigate(sectionRefs.section4Ref)}>Hackathons</h5>
         <h5>Contact</h5>
       </div>
     </Box>

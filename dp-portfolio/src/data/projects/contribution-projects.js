@@ -1,5 +1,6 @@
 import riseUpMora from "../../assets/images/carousel/other/riseupmora.png"
 import devLabs from "../../assets/images/carousel/other/devlabs.png"
+import internify from "../../assets/images/carousel/other/internify.png"
 
 export const contributions = [
     {
@@ -23,5 +24,16 @@ export const contributions = [
         technologies: ["TypeScript", "CSS", "TailwindCSS", "NextJS"],
         link: "https://devlabsbyfit.netlify.app/",
         image: devLabs
+    },
+    {
+        id: "project3",
+        name: "Internify - Internship Tracking System",
+        category: "Contributions",
+        colaboration: "group",
+        members: [],
+        description: "All-in-one Internship Tracking System designed and developed for Level 03 students of Faculty of Information Technology, University of Moratuwa.",
+        technologies: ["Figma"],
+        link: "https://www.internify.fit//",
+        image: internify
     }
 ]

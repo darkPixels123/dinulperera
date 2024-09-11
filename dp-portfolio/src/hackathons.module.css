@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "arial";
+  src: url("../src/fonts/arial-greek.ttf");
+}
+
+@font-face {
+  font-family: "helvetica";
+  src: url("../src/fonts/helvetica.ttf");
+}
+
+@media only screen and (max-width: 600px) {
+  .topicName {
+    font-size: 1.8rem;
+    font-family: "arial";
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .topicName {
+    font-size: 3rem;
+    font-family: "arial";
+    text-align: left;
+  }
+}
+
+.HackathonCardContainer {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HackathonCard {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.cardImgContainer {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.cardImgContainer img {
+  width: 100%;
+  transition-duration: 400ms;
+  filter: grayscale(70%);
+}
+
+.cardImgContainer img:hover {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.HackathonDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  height: 100%;
+}
+
+.hackathonName {
+  font-size: 1.9rem;
+  font-family: "arial";
+  margin-bottom: 10px;
+}
+
+.hackathonOrganizer {
+  font-size: 1rem;
+  font-family: "arial";
+  margin-bottom: 5px;
+  color: white;
+  border-radius: 50px;
+}
+
+.hackathonOrganizer span {
+  font-family: "arial";
+  color: #007bff;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.hackathonResult {
+  font-size: 1rem;
+  font-family: "arial";
+  margin-top: 30px;
+  background-color: #007bff;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 50px;
+}
+
+.HackathonDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 100%;
+  text-align: start;
+}

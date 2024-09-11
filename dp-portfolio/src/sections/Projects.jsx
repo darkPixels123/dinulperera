@@ -59,6 +59,7 @@ export default function Projects({ isDarkMode }) {
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: { xs: "center", sm: "left" },
+                marginBottom: "10px",
               }}
             >
               <h3 className={styles.topicName}>Projects</h3>

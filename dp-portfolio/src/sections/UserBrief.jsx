@@ -4,6 +4,7 @@ import Avatar from "@mui/material/Avatar";
 
 // typing animation
 import Typed from "typed.js";
+import { FlipWords } from "../components/ui/flip-words";
 // typing animation
 
 // download btns
@@ -28,35 +29,20 @@ import nightTimeGif from "../assets/images/gifs/pokemon-nighttime2.gif";
 import myCV from "../assets/download/CV.pdf";
 
 export default function UserBrief({ isDarkMode }) {
-  const positions = React.useRef(null);
   const intro = React.useRef(null);
   const [introMsgTrigger, setIntroMsgTrigger] = React.useState(false);
 
-  React.useEffect(() => {
-    const typed = new Typed(positions.current, {
-      strings: [
-        "Developer",
-        "Graphic Designer",
-        "UI UX Designer",
-        "Video Editor",
-      ],
-      typeSpeed: 100,
-      backSpeed: 50,
-      startDelay: 100,
-      showCursor: false,
-      loop: true,
-    });
-
-    return () => {
-      // Destroy Typed instance during cleanup to stop animation
-      typed.destroy();
-    };
-  }, []);
+  const strings = [
+    "Developer",
+    "Graphic Designer",
+    "UI UX Designer",
+    "Video Editor",
+  ];
 
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = myCV; // Path to your PDF file
-    link.download = "dinulPerera.pdf"; // The name for the downloaded file
+    link.href = myCV; 
+    link.download = "dinulPerera.pdf";
     link.click();
   };
 
@@ -138,7 +124,7 @@ export default function UserBrief({ isDarkMode }) {
                     sx={{
                       width: 80,
                       height: 80,
-                      border: "solid rgb(0, 122, 255) 4px",
+                      border: "solid rgb(0, 122, 255) 3.5px",
                       cursor: "pointer",
                     }}
                     onMouseEnter={() => {
@@ -174,7 +160,7 @@ export default function UserBrief({ isDarkMode }) {
             <Grid item xs={12}>
               {/* positions */}
               <div className={styles.userPositions}>
-                <span ref={positions} className={styles.positions} />
+                <FlipWords words={strings} className={styles.positions} />
               </div>
             </Grid>
             <Grid item container xs={12} sx={{ marginTop: { xs: "0px" } }}>

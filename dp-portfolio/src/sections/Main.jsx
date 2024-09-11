@@ -10,6 +10,7 @@ import upBlack from "../assets/images/btn_icons/upBlack.png";
 import upWhite from "../assets/images/btn_icons/upWhite.png";
 import Projects from "./Projects";
 import TechAndTools from "./TechAndTools";
+import Hackathons from "./Hackathons";
 
 export default function Main() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -36,6 +37,7 @@ export default function Main() {
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const section3Ref = useRef(null);
+  const section4Ref = useRef(null);
   // Add more refs as needed for each section
 
   useEffect(() => {
@@ -105,7 +107,7 @@ export default function Main() {
             isDarkMode={isDarkMode}
             toggleDarkMode={toggleDarkMode}
             onNavigate={handleScroll}
-            sectionRefs={{ section1Ref, section2Ref, section3Ref }}
+            sectionRefs={{ section1Ref, section2Ref, section3Ref, section4Ref }}
           />
         </Grid>
         {/* navbar */}
@@ -137,6 +139,13 @@ export default function Main() {
           </section>
         </Grid>
         {/* project slideshow */}
+        {/* hackathons and events */}
+        <Grid item xs={12}>
+          <section id="section4" ref={section4Ref}>
+            <Hackathons isDarkMode={isDarkMode} />
+          </section>
+        </Grid>
+        {/* hackathons and events */}
       </Grid>
     </div>
   );
