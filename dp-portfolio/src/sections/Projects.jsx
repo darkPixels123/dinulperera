@@ -19,6 +19,19 @@ import { brandProjects } from "../data/projects/brand-projects";
 import { uiuxProjects } from "../data/projects/uiux-projects";
 // project categories
 
+// carousel icons
+import webWhite from "../assets/images/carousel-icons/web-white.png";
+import webBlack from "../assets/images/carousel-icons/web-black.png";
+import mobileBlack from "../assets/images/carousel-icons/mobile-black.png";
+import mobileWhite from "../assets/images/carousel-icons/mobile-white.png";
+import contributionWhite from "../assets/images/carousel-icons/contribution-white.png";
+import contributionBlack from "../assets/images/carousel-icons/contribution-black.png";
+import uiBlack from "../assets/images/carousel-icons/ui-black.png";
+import uiWhite from "../assets/images/carousel-icons/ui-white.png";
+import brandingWhite from "../assets/images/carousel-icons/branding-white.png";
+import brandingBlack from "../assets/images/carousel-icons/branding-black.png";
+// carousel icons
+
 export default function Projects({ isDarkMode }) {
   const [carouselCategory, setCarouselCategory] = useState("Web Projects");
   const [currentCarousel, setCurrentCarousel] = useState(webProjects);
@@ -39,11 +52,19 @@ export default function Projects({ isDarkMode }) {
   };
 
   const projectCategories = [
-    "Web Projects",
-    "Contributions",
-    "Mobile Apps",
-    "Brand Identity",
-    "UI UX",
+    { name: "Web Projects", imgWhite: webWhite, imgBlack: webBlack },
+    {
+      name: "Contributions",
+      imgWhite: contributionWhite,
+      imgBlack: contributionBlack,
+    },
+    { name: "Mobile Apps", imgWhite: mobileWhite, imgBlack: mobileBlack },
+    {
+      name: "Brand Identity",
+      imgWhite: brandingWhite,
+      imgBlack: brandingBlack,
+    },
+    { name: "UI UX", imgWhite: uiWhite, imgBlack: uiBlack },
   ];
 
   return (
@@ -80,30 +101,46 @@ export default function Projects({ isDarkMode }) {
                 }}
               >
                 {projectCategories.map((item, index) => {
-                  return carouselCategory === item ? (
-                    <span
-                      style={{ textWrap: "nowrap" }}
+                  return carouselCategory === item.name ? (
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                        gap: 0,
+                      }}
                       className={`${
                         isDarkMode
                           ? styles.DarkCarouselCategorySelected
                           : styles.LightCarouselCategorySelected
                       }`}
-                      onClick={() => {
-                        handleCarouselCategory(item);
-                      }}
-                      key={index}
                     >
-                      {item}
-                    </span>
+                      <img
+                        src={isDarkMode ? item.imgWhite : item.imgBlack}
+                        width={15}
+                        alt="category_img"
+                      />
+                      <span
+                        style={{ textWrap: "nowrap" }}
+                        onClick={() => {
+                          handleCarouselCategory(item.name);
+                        }}
+                        key={index}
+                      >
+                        {item.name}
+                      </span>
+                    </div>
                   ) : (
                     <span
                       style={{ textWrap: "nowrap" }}
                       onClick={() => {
-                        handleCarouselCategory(item);
+                        handleCarouselCategory(item.name);
                       }}
                       key={index}
                     >
-                      {item}
+                      {item.name}
                     </span>
                   );
                 })}
@@ -150,7 +187,7 @@ export default function Projects({ isDarkMode }) {
                   }}
                 >
                   {projectCategories.map((item, index) => {
-                    return carouselCategory === item ? (
+                    return carouselCategory === item.name ? (
                       <SwiperSlide
                         key={index}
                         style={{
@@ -161,18 +198,36 @@ export default function Projects({ isDarkMode }) {
                           textWrap: "nowrap",
                         }}
                       >
-                        <span
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            gap: 0,
+                          }}
                           className={`${
                             isDarkMode
                               ? styles.DarkCarouselCategorySelected
                               : styles.LightCarouselCategorySelected
                           }`}
-                          onClick={() => {
-                            handleCarouselCategory(item);
-                          }}
                         >
-                          {item}
-                        </span>
+                          <img
+                            src={isDarkMode ? item.imgWhite : item.imgBlack}
+                            width={15}
+                            alt="category_img"
+                          />
+                          <span
+                            style={{ textWrap: "nowrap" }}
+                            onClick={() => {
+                              handleCarouselCategory(item.name);
+                            }}
+                            key={index}
+                          >
+                            {item.name}
+                          </span>
+                        </div>
                       </SwiperSlide>
                     ) : (
                       <SwiperSlide
@@ -187,10 +242,10 @@ export default function Projects({ isDarkMode }) {
                       >
                         <span
                           onClick={() => {
-                            handleCarouselCategory(item);
+                            handleCarouselCategory(item.name);
                           }}
                         >
-                          {item}
+                          {item.name}
                         </span>
                       </SwiperSlide>
                     );

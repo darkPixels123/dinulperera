@@ -152,12 +152,15 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 60px;
-  color: rgba(0, 123, 255);
-  font-family: monospace;
   font-size: 15px;
   display: flex;
+  color: #3290f6;
   justify-content: center;
   gap: 10px;
+}
+
+.availableDiv span {
+  font-family: monospace;
 }
 
 .bouncingDot {

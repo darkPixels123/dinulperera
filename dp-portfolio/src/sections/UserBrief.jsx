@@ -41,7 +41,7 @@ export default function UserBrief({ isDarkMode }) {
 
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = myCV; 
+    link.href = myCV;
     link.download = "dinulPerera.pdf";
     link.click();
   };
@@ -222,7 +222,10 @@ export default function UserBrief({ isDarkMode }) {
                   }}
                 >
                   <div className={styles.availableDiv}>
-                    <div class={styles.bouncingDot}></div> Available for work
+                    <div class={styles.bouncingDot}></div>{" "}
+                    <span style={{ color: isDarkMode ? "white" : "#3290f6 " }}>
+                      Available for work
+                    </span>
                   </div>
                 </Grid>
               </Grid>

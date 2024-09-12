@@ -4,6 +4,10 @@ import styles from "../hackathons.module.css";
 
 import { hackathons } from "../data/events/hackathon-events";
 
+// images
+import medal from "../assets/images/btn_icons/medal.png";
+// images
+
 // Import Swiper Component
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -113,13 +117,25 @@ export default function Hackathons({ isDarkMode }) {
             <Grid item xs={12} md={7}>
               <Box className={styles.HackathonDescriptionContainer}>
                 <h3 className={styles.hackathonName}>{hackathonName}</h3>
-                <span className={styles.hackathonOrganizer}>
+                <span
+                  className={styles.hackathonOrganizer}
+                  style={{
+                    color: isDarkMode ? "white" : "black",
+                  }}
+                >
                   Organized by <span>{hackathonOrganizer}</span>
                 </span>
-                <span className={styles.hackathonResult}>
-                  {hackathonResult}
+                <Box className={styles.hackathonResult}>
+                  <img
+                    src={medal}
+                    alt="medal"
+                    width={20}
+                  />
+                  <span>{hackathonResult}</span>
+                </Box>
+                <span style={{ marginTop: "35px", fontFamily: "arial" }}>
+                  &bull; Description
                 </span>
-                <span style={{ marginTop: "35px" }}>Description :</span>
                 <p className={styles.HackathonDescription}>
                   <TextGenerateEffect words={HackathonDescription} />
                 </p>

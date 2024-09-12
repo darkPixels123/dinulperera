@@ -6,6 +6,7 @@ import {
   AccordionSummary,
   Box,
   Grid,
+  Tooltip,
 } from "@mui/material";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -67,7 +68,11 @@ export default function TechAndTools({ isDarkMode }) {
                 <Grid item xs={12} className={styles.developmentToolsSection}>
                   {technologies.map((item, index) => {
                     return (
-                      <div
+                      <Box
+                        sx={{
+                          width: { xs: "80px", md: "370px" },
+                          height: { xs: "80px", md: "140px" },
+                        }}
                         className={`${
                           isDarkMode
                             ? styles.darkTechCard
@@ -77,23 +82,33 @@ export default function TechAndTools({ isDarkMode }) {
                       >
                         <Grid container sx={{ height: "100%" }}>
                           <Grid
-                            xs={4}
+                            xs={12}
+                            md={4}
                             sx={{
                               display: "flex",
                               justifyContent: "center",
-                              alignItems: "start",
+                              alignItems: "center",
                             }}
                           >
-                            <img
-                              alt="Tool logo"
-                              src={item.image}
-                              style={{ margin: "20px", width: "80px" }}
-                            />
+                            <Tooltip title={item.name} arrow>
+                              <Box
+                                component="img"
+                                alt="Tool logo"
+                                src={item.image}
+                                sx={{
+                                  margin: { xs: "20px" },
+                                  width: { xs: "50px", md: "80px" },
+                                }}
+                                onClick={() => {
+                                  navigateToSite(item.link);
+                                }}
+                              />
+                            </Tooltip>
                           </Grid>
                           <Grid
-                            xs={8}
+                            md={8}
                             sx={{
-                              display: "flex",
+                              display: { xs: "none", md: "flex" },
                               flexDirection: "column",
                               justifyContent: "start",
                               alignItems: "start",
@@ -131,7 +146,7 @@ export default function TechAndTools({ isDarkMode }) {
                             </Box>
                           </Grid>
                         </Grid>
-                      </div>
+                      </Box>
                     );
                   })}
                 </Grid>
@@ -169,7 +184,11 @@ export default function TechAndTools({ isDarkMode }) {
                 <Grid item xs={12} className={styles.developmentToolsSection}>
                   {developmentTools.map((item, index) => {
                     return (
-                      <div
+                      <Box
+                        sx={{
+                          width: { xs: "80px", md: "370px" },
+                          height: { xs: "80px", md: "140px" },
+                        }}
                         className={`${
                           isDarkMode
                             ? styles.darkTechCard
@@ -179,23 +198,33 @@ export default function TechAndTools({ isDarkMode }) {
                       >
                         <Grid container sx={{ height: "100%" }}>
                           <Grid
-                            xs={4}
+                            xs={12}
+                            md={4}
                             sx={{
                               display: "flex",
                               justifyContent: "center",
                               alignItems: "center",
                             }}
                           >
-                            <img
-                              alt="Tool logo"
-                              src={item.image}
-                              style={{ margin: "20px", width: "80px" }}
-                            />
+                            <Tooltip title={item.name} arrow>
+                              <Box
+                                component="img"
+                                alt="Tool logo"
+                                src={item.image}
+                                sx={{
+                                  margin: { xs: "20px" },
+                                  width: { xs: "50px", md: "80px" },
+                                }}
+                                onClick={() => {
+                                  navigateToSite(item.link);
+                                }}
+                              />
+                            </Tooltip>
                           </Grid>
                           <Grid
-                            xs={8}
+                            md={8}
                             sx={{
-                              display: "flex",
+                              display: { xs: "none", md: "flex" },
                               flexDirection: "column",
                               justifyContent: "start",
                               alignItems: "start",
@@ -228,12 +257,12 @@ export default function TechAndTools({ isDarkMode }) {
                                   navigateToSite(item.link);
                                 }}
                               >
-                                explore
+                                docs
                               </span>
                             </Box>
                           </Grid>
                         </Grid>
-                      </div>
+                      </Box>
                     );
                   })}
                 </Grid>
@@ -271,7 +300,11 @@ export default function TechAndTools({ isDarkMode }) {
                 <Grid item xs={12} className={styles.designToolsSection}>
                   {designTools.map((item, index) => {
                     return (
-                      <div
+                      <Box
+                        sx={{
+                          width: { xs: "80px", md: "370px" },
+                          height: { xs: "80px", md: "140px" },
+                        }}
                         className={`${
                           isDarkMode
                             ? styles.darkTechCard
@@ -281,26 +314,33 @@ export default function TechAndTools({ isDarkMode }) {
                       >
                         <Grid container sx={{ height: "100%" }}>
                           <Grid
-                            xs={4}
+                            xs={12}
+                            md={4}
                             sx={{
                               display: "flex",
                               justifyContent: "center",
                               alignItems: "center",
                             }}
                           >
-                            <img
-                              alt="Tool logo"
-                              src={item.image}
-                              style={{
-                                margin: "20px",
-                                width: "80px",
-                              }}
-                            />
+                            <Tooltip title={item.name} arrow>
+                              <Box
+                                component="img"
+                                alt="Tool logo"
+                                src={item.image}
+                                sx={{
+                                  margin: { xs: "20px" },
+                                  width: { xs: "50px", md: "80px" },
+                                }}
+                                onClick={() => {
+                                  navigateToSite(item.link);
+                                }}
+                              />
+                            </Tooltip>
                           </Grid>
                           <Grid
-                            xs={8}
+                            md={8}
                             sx={{
-                              display: "flex",
+                              display: { xs: "none", md: "flex" },
                               flexDirection: "column",
                               justifyContent: "start",
                               alignItems: "start",
@@ -333,12 +373,12 @@ export default function TechAndTools({ isDarkMode }) {
                                   navigateToSite(item.link);
                                 }}
                               >
-                                explore
+                                docs
                               </span>
                             </Box>
                           </Grid>
                         </Grid>
-                      </div>
+                      </Box>
                     );
                   })}
                 </Grid>
@@ -376,7 +416,11 @@ export default function TechAndTools({ isDarkMode }) {
                 <Grid item xs={12} className={styles.designToolsSection}>
                   {editingTools.map((item, index) => {
                     return (
-                      <div
+                      <Box
+                        sx={{
+                          width: { xs: "80px", md: "370px" },
+                          height: { xs: "80px", md: "140px" },
+                        }}
                         className={`${
                           isDarkMode
                             ? styles.darkTechCard
@@ -386,26 +430,33 @@ export default function TechAndTools({ isDarkMode }) {
                       >
                         <Grid container sx={{ height: "100%" }}>
                           <Grid
-                            xs={4}
+                            xs={12}
+                            md={4}
                             sx={{
                               display: "flex",
                               justifyContent: "center",
                               alignItems: "center",
                             }}
                           >
-                            <img
-                              alt="Tool logo"
-                              src={item.image}
-                              style={{
-                                margin: "20px",
-                                width: "80px",
-                              }}
-                            />
+                            <Tooltip title={item.name} arrow>
+                              <Box
+                                component="img"
+                                alt="Tool logo"
+                                src={item.image}
+                                sx={{
+                                  margin: { xs: "20px" },
+                                  width: { xs: "50px", md: "80px" },
+                                }}
+                                onClick={() => {
+                                  navigateToSite(item.link);
+                                }}
+                              />
+                            </Tooltip>
                           </Grid>
                           <Grid
-                            xs={8}
+                            md={8}
                             sx={{
-                              display: "flex",
+                              display: { xs: "none", md: "flex" },
                               flexDirection: "column",
                               justifyContent: "start",
                               alignItems: "start",
@@ -438,12 +489,12 @@ export default function TechAndTools({ isDarkMode }) {
                                   navigateToSite(item.link);
                                 }}
                               >
-                                explore
+                                docs
                               </span>
                             </Box>
                           </Grid>
                         </Grid>
-                      </div>
+                      </Box>
                     );
                   })}
                 </Grid>

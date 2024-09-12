@@ -163,13 +163,10 @@ export default function SomethingAboutMe({ isDarkMode }) {
                 a relentless focus on achieving project success.
               </p>
               <p>
-                My commitment to continuous professional development ensures
-                that I stay at the forefront of industry advancements, allowing
-                me to consistently deliver innovative solutions that not only
-                meet but exceed client expectations. This dedication to
-                excellence is reflected in my proven track record of delivering
-                outstanding results, underscored by a deep technical acumen and
-                a relentless focus on achieving project success.
+                In my free time , I make content for my YouTube channel and my
+                Instagram page. I love the process of shooting and editing
+                videos , and I think I can make an impact to the world through
+                content creation.
               </p>
               {/* something about me description */}
             </Grid>
