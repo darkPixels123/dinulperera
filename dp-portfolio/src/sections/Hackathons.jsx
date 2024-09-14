@@ -59,9 +59,74 @@ export default function Hackathons({ isDarkMode }) {
             </Grid>
           </Grid>
           <Grid xs={12} item container>
-            <Grid item xs={12} md={5} className={styles.HackathonCardContainer}>
+            <Grid
+              item
+              md={5}
+              sx={{ display: { xs: "none", md: "flex" } }}
+              className={styles.HackathonCardContainer}
+            >
               <Swiper
                 direction={"vertical"}
+                pagination={{
+                  clickable: true,
+                }}
+                className="mySwiper"
+                keyboard={{
+                  enabled: true,
+                }}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                navigation={true}
+                speed={1000}
+                loop={true}
+                modules={[
+                  Autoplay,
+                  Pagination,
+                  Navigation,
+                  Keyboard,
+                  EffectCards,
+                ]}
+                style={{ width: "100%", height: "100%" }}
+                breakpoints={{
+                  340: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                  },
+                  868: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  1250: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                }}
+                onSlideChange={handleSlideChange}
+              >
+                {hackathons.map((item, index) => {
+                  return (
+                    <>
+                      <SwiperSlide key={index}>
+                        <Box className={styles.HackathonCard}>
+                          {/* image holder */}
+                          <Box className={styles.cardImgContainer}>
+                            <img src={item.image} alt="hackathon_img" />
+                          </Box>
+                          {/* image holder */}
+                        </Box>
+                      </SwiperSlide>
+                    </>
+                  );
+                })}
+              </Swiper>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              className={styles.HackathonCardContainer}
+              sx={{ display: { xs: "flex", md: "none" } }}
+            >
+              <Swiper
+                direction={"horizontal"}
                 pagination={{
                   clickable: true,
                 }}
@@ -126,11 +191,7 @@ export default function Hackathons({ isDarkMode }) {
                   Organized by <span>{hackathonOrganizer}</span>
                 </span>
                 <Box className={styles.hackathonResult}>
-                  <img
-                    src={medal}
-                    alt="medal"
-                    width={20}
-                  />
+                  <img src={medal} alt="medal" width={20} />
                   <span>{hackathonResult}</span>
                 </Box>
                 <span style={{ marginTop: "35px", fontFamily: "arial" }}>
