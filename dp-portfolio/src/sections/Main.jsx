@@ -160,11 +160,11 @@ export default function Main() {
         </Grid>
         {/* contact */}
         {/* copyright note */}
-        {/* <Grid item xs={12} mt={4}>
+        <Grid item xs={12} mt={4}>
           <Box className={`${styles.copyrightDiv}`}>
             Developed by @Dinul Perera 2024
           </Box>
-        </Grid> */}
+        </Grid>
         {/* copyright note */}
       </Grid>
     </div>
