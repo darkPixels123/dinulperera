@@ -12,10 +12,9 @@ function App() {
 
   // loading animation
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
+    window.addEventListener("load", function () {
+      setIsLoading(false)
+    })
   }, []);
   // loading animation
 
