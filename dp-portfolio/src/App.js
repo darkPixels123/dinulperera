@@ -15,7 +15,14 @@ function App() {
 
     window.addEventListener("load", handleLoad);
 
-    return () => window.removeEventListener("load", handleLoad);
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
