@@ -52,7 +52,9 @@ export default function Navbar({
                 <span onClick={() => onNavigate(sectionRefs.section4Ref)}>
                   Hackathons
                 </span>
-                <span>Contact</span>
+                <span onClick={() => onNavigate(sectionRefs.section5Ref)}>
+                  Contact
+                </span>
               </Grid>
               <Grid
                 item

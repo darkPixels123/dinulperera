@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/navbar/navbar";
 import styles from "../main.module.css";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import UserBrief from "./UserBrief";
 import SomethingAboutMe from "./SomethingAboutMe";
+import Contacts from "./Contacts";
 import lenis from "../components/animations/lenis";
 
 import upBlack from "../assets/images/btn_icons/upBlack.png";
@@ -22,7 +23,6 @@ export default function Main() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 30) {
-        // Show arrow after scrolling down 100px
         setShowArrow(true);
       } else {
         setShowArrow(false);
@@ -38,7 +38,7 @@ export default function Main() {
   const section2Ref = useRef(null);
   const section3Ref = useRef(null);
   const section4Ref = useRef(null);
-  // Add more refs as needed for each section
+  const section5Ref = useRef(null);
 
   useEffect(() => {
     document.body.classList.toggle(styles.darkMode, isDarkMode);
@@ -53,7 +53,7 @@ export default function Main() {
   const handleScroll = (ref = null) => {
     const target = ref?.current || document.body;
     lenis.scrollTo(target, {
-      offset: ref ? -80 : 0, // Offset only when scrolling to a section
+      offset: ref ? -80 : 0,
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
@@ -74,7 +74,7 @@ export default function Main() {
             alignItems: "center",
           }}
         ></div>
-        {showArrow && ( // Conditionally render the arrow button
+        {showArrow && (
           <div
             style={{
               position: "fixed",
@@ -95,7 +95,7 @@ export default function Main() {
                   : "rgb(245, 245, 247)",
                 zIndex: 1000,
               }}
-              onClick={() => handleScroll(null)} // Scroll to top when arrow is clicked
+              onClick={() => handleScroll(null)}
             >
               <img src={isDarkMode ? upWhite : upBlack} alt="Scroll to top" />
             </div>
@@ -107,7 +107,13 @@ export default function Main() {
             isDarkMode={isDarkMode}
             toggleDarkMode={toggleDarkMode}
             onNavigate={handleScroll}
-            sectionRefs={{ section1Ref, section2Ref, section3Ref, section4Ref }}
+            sectionRefs={{
+              section1Ref,
+              section2Ref,
+              section3Ref,
+              section4Ref,
+              section5Ref,
+            }}
           />
         </Grid>
         {/* navbar */}
@@ -126,26 +132,40 @@ export default function Main() {
         </Grid>
         {/* something about me */}
         {/* Technologies and Tools */}
-        <Grid item xs={12}>
+        <Grid item xs={12} mt={4}>
           <section id="section4" ref={section3Ref}>
             <TechAndTools isDarkMode={isDarkMode} />
           </section>
         </Grid>
         {/* Technologies and Tools */}
         {/* project slideshow */}
-        <Grid item xs={12}>
+        <Grid item xs={12} mt={4}>
           <section id="section3" ref={section2Ref}>
             <Projects isDarkMode={isDarkMode} />
           </section>
         </Grid>
         {/* project slideshow */}
         {/* hackathons and events */}
-        <Grid item xs={12}>
+        <Grid item xs={12} mt={4}>
           <section id="section4" ref={section4Ref}>
             <Hackathons isDarkMode={isDarkMode} />
           </section>
         </Grid>
         {/* hackathons and events */}
+        {/* contact */}
+        <Grid item xs={12} mt={4}>
+          <section id="section5" ref={section5Ref}>
+            <Contacts isDarkMode={isDarkMode} />
+          </section>
+        </Grid>
+        {/* contact */}
+        {/* copyright note */}
+        <Grid item xs={12} mt={4}>
+          <Box className={`${styles.copyrightDiv}`}>
+            Developed by @Dinul Perera 2024
+          </Box>
+        </Grid>
+        {/* copyright note */}
       </Grid>
     </div>
   );
