@@ -10,17 +10,23 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // loading animation
   useEffect(() => {
-    window.addEventListener("DOMContentLoaded", function () {
-      setIsLoading(false)
-    })
+    const handleLoad = () => setIsLoading(false);
+
+    window.addEventListener("load", handleLoad);
+
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
-  // loading animation
 
   return (
     <div className="App">
-      {isLoading ? (<div style={{ backgroundColor: isDarkMode ? ("rgb(18, 18, 18)") : ("rgb(255, 255, 255)") }}><Loading isDarkMode={isDarkMode} /></div>) : (<Main />)}
+      {isLoading ? (
+        <div style={{ backgroundColor: isDarkMode ? "rgb(18, 18, 18)" : "rgb(255, 255, 255)" }}>
+          <Loading isDarkMode={isDarkMode} />
+        </div>
+      ) : (
+        <Main />
+      )}
     </div>
   );
 }
