@@ -118,7 +118,14 @@ export default function Main() {
         </Grid>
         {/* navbar */}
         {/* user brief section */}
-        <Grid item xs={12} mt={10}>
+        <Grid
+          item
+          xs={12}
+          mt={10}
+          sx={{
+            mb: { xs: 60, sm: 0 }, // 20 for xs and 50 for md
+          }}
+        >
           <section id="section1">
             <UserBrief isDarkMode={isDarkMode} />
           </section>
