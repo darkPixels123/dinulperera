@@ -146,7 +146,7 @@ export default function Main() {
         </Grid>
         {/* Technologies and Tools */}
         {/* project slideshow */}
-        <Grid item xs={12} mt={4}>
+        <Grid item xs={12}>
           <section id="section3" ref={section2Ref}>
             <Projects isDarkMode={isDarkMode} />
           </section>

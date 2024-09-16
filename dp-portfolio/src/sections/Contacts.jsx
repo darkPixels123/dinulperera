@@ -71,8 +71,8 @@ export default function Contacts({ isDarkMode }) {
           {/* map */}
           <Grid xs={12} item container mt={5}>
             {/* contact details */}
-            <Grid xs={2} />
-            <Grid xs={12} md={8} order={{ xs: 2, md: 1 }}>
+            <Grid sm={2} md={3} />
+            <Grid xs={12} sm={8} md={6} order={{ xs: 2, md: 1 }}>
               <Grid xs={12} container spacing={2}>
                 <Grid item xs={12}>
                   <Box

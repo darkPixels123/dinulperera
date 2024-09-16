@@ -179,7 +179,6 @@ export default function UserBrief({ isDarkMode }) {
                     </p>
                   </div>
                 </Grid>
-
                 <Grid
                   item
                   xs={12}
