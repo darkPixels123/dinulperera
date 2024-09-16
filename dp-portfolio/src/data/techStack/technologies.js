@@ -93,14 +93,14 @@ export const technologies = [
         link: "https://docs.oracle.com/en/java/",
         image: java,
     },
-    {
-        id: "tech11",
-        name: "PHP",
-        category: "technologies",
-        description: "PHP is a programming language used to script websites that are dynamic and interactive. You'll find it in various types of web applications, from e-commerce websites to CRM systems like HubSpot and Salesforce. The term PHP stands for PHP Hypertext Preprocessor.",
-        link: "https://www.php.net/docs.php",
-        image: php,
-    },
+    // {
+    //     id: "tech11",
+    //     name: "PHP",
+    //     category: "technologies",
+    //     description: "PHP is a programming language used to script websites that are dynamic and interactive. You'll find it in various types of web applications, from e-commerce websites to CRM systems like HubSpot and Salesforce. The term PHP stands for PHP Hypertext Preprocessor.",
+    //     link: "https://www.php.net/docs.php",
+    //     image: php,
+    // },
     {
         id: "tech12",
         name: "C",
@@ -109,12 +109,12 @@ export const technologies = [
         link: "https://devdocs.io/c/",
         image: CLanguage,
     },
-    {
-        id: "tech13",
-        name: "Python",
-        category: "technologies",
-        description: "Python is often used as a support language for software developers, for build control and management, testing, and in many other ways. SCons for build control. Buildbot and Apache Gump for automated continuous compilation and testing. Roundup or Trac for bug tracking and project management.",
-        link: "https://docs.python.org/3/",
-        image: python,
-    },
+    // {
+    //     id: "tech13",
+    //     name: "Python",
+    //     category: "technologies",
+    //     description: "Python is often used as a support language for software developers, for build control and management, testing, and in many other ways. SCons for build control. Buildbot and Apache Gump for automated continuous compilation and testing. Roundup or Trac for bug tracking and project management.",
+    //     link: "https://docs.python.org/3/",
+    //     image: python,
+    // },
 ]
