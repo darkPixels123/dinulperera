@@ -63,7 +63,7 @@ export default function Navbar({
                   display: "flex",
                   justifyContent: "right",
                   alignItems: "center",
-                  paddingRight:"3%",
+                  paddingRight: "30px",
                 }}
               >
                 <DarkMode toggleDarkMode={toggleDarkMode} />
