@@ -46,6 +46,8 @@ export default function Contacts({ isDarkMode }) {
           {/* map */}
           <Grid
             xs={12}
+            md={7}
+            lg={8}
             container
             sx={{
               marginTop: { xs: "20px", md: "0px" },
@@ -69,52 +71,58 @@ export default function Contacts({ isDarkMode }) {
             ></iframe>
           </Grid>
           {/* map */}
-          <Grid xs={12} item container mt={5}>
+          <Grid
+            xs={12}
+            md={5}
+            lg={4}
+            item
+            container
+            mt={5}
+            paddingLeft={{ xs: 0, md: 2 }}
+          >
             {/* contact details */}
             <Grid sm={2} md={3} />
-            <Grid xs={12} sm={8} md={6} order={{ xs: 2, md: 1 }}>
-              <Grid xs={12} container spacing={2}>
-                <Grid item xs={12}>
-                  <Box
-                    className={`${styles.contactBox1} ${
-                      isDarkMode ? styles.darkContact : styles.lightContact
-                    }`}
-                    sx={{ cursor: "pointer" }}
-                    onClick={sendEmail}
-                  >
-                    <img
-                      src={isDarkMode ? whiteEmail : blackEmail}
-                      width={20}
-                      alt="email"
-                    />
-                    dinulperera2001@gmail.com
-                  </Box>
-                </Grid>
-                {socialMediaInfo.map((item, index) => {
-                  return (
-                    <Grid item xs={6} md={6} key={index}>
-                      <Box
-                        className={`${styles.contactBox1} ${
-                          isDarkMode ? styles.darkContact : styles.lightContact
-                        }`}
-                        sx={{ cursor: "pointer" }}
-                        onClick={() => {
-                          goToLink(item.url);
-                        }}
-                      >
-                        <img
-                          alt="social_img"
-                          src={
-                            isDarkMode ? item.whiteImageUrl : item.blackImageUrl
-                          }
-                          width={20}
-                        />
-                        {item.name}
-                      </Box>
-                    </Grid>
-                  );
-                })}
+            <Grid xs={12} sm={8} md={12} container spacing={2}>
+              <Grid item xs={12}>
+                <Box
+                  className={`${styles.contactBox1} ${
+                    isDarkMode ? styles.darkContact : styles.lightContact
+                  }`}
+                  sx={{ cursor: "pointer" }}
+                  onClick={sendEmail}
+                >
+                  <img
+                    src={isDarkMode ? whiteEmail : blackEmail}
+                    width={20}
+                    alt="email"
+                  />
+                  dinulperera2001@gmail.com
+                </Box>
               </Grid>
+              {socialMediaInfo.map((item, index) => {
+                return (
+                  <Grid item xs={6} md={6} key={index}>
+                    <Box
+                      className={`${styles.contactBox1} ${
+                        isDarkMode ? styles.darkContact : styles.lightContact
+                      }`}
+                      sx={{ cursor: "pointer" }}
+                      onClick={() => {
+                        goToLink(item.url);
+                      }}
+                    >
+                      <img
+                        alt="social_img"
+                        src={
+                          isDarkMode ? item.whiteImageUrl : item.blackImageUrl
+                        }
+                        width={20}
+                      />
+                      {item.name}
+                    </Box>
+                  </Grid>
+                );
+              })}
             </Grid>
             {/* contact details */}
           </Grid>
