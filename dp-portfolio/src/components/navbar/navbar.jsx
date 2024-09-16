@@ -31,7 +31,7 @@ export default function Navbar({
           >
             <Grid container className={styles.navbarContent}>
               {/* mylogo */}
-              <Grid item lg={5} className={styles.myLogoContainer}>
+              <Grid item lg={3} className={styles.myLogoContainer}>
                 <img
                   src={isDarkMode ? dpWhiteLogo : dpBlackLogo}
                   alt="dpLogo"
@@ -58,11 +58,12 @@ export default function Navbar({
               </Grid>
               <Grid
                 item
-                lg={1}
+                lg={3}
                 style={{
                   display: "flex",
-                  justifyContent: "center",
+                  justifyContent: "right",
                   alignItems: "center",
+                  paddingRight:"3%",
                 }}
               >
                 <DarkMode toggleDarkMode={toggleDarkMode} />

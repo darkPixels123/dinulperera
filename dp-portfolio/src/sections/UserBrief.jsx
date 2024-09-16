@@ -83,7 +83,7 @@ export default function UserBrief({ isDarkMode }) {
         <Grid
           style={{ width: "100%", position: "relative" }}
           sx={{
-            display: { xs:"flex" },
+            display: { xs: "flex" },
             justifyContent: "center",
             alignItems: "center",
             overflow: "hidden",
@@ -104,7 +104,7 @@ export default function UserBrief({ isDarkMode }) {
           item
           container
           sx={{
-            position: { xs:"absolute" },
+            position: { xs: "absolute" },
           }}
         >
           <Grid item xs={1} />
