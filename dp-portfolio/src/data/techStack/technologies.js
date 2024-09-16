@@ -20,14 +20,7 @@ export const technologies = [
         link: "https://react.dev/blog/2023/03/16/introducing-react-dev",
         image: react,
     },
-    {
-        id: "tech2",
-        name: "React Native",
-        category: "technologies",
-        description: "React Native (also known as RN) is a popular JavaScript-based mobile app framework that allows you to build natively-rendered mobile apps for iOS and Android . The framework lets you create an application for various platforms by using the same codebase .",
-        link: "https://reactnative.dev/docs/getting-started",
-        image: react,
-    },
+
     {
         id: "tech3",
         name: "Express",
@@ -51,6 +44,14 @@ export const technologies = [
         description: "Material UI provides an optional CssBaseline component. It fixes some inconsistencies across browsers and devices while providing resets that are better tailored to fit Material UI than alternative global style sheets like normalize.css.",
         link: "https://mui.com/material-ui/getting-started/",
         image: materialui,
+    },
+    {
+        id: "tech2",
+        name: "React Native",
+        category: "technologies",
+        description: "React Native (also known as RN) is a popular JavaScript-based mobile app framework that allows you to build natively-rendered mobile apps for iOS and Android . The framework lets you create an application for various platforms by using the same codebase .",
+        link: "https://reactnative.dev/docs/getting-started",
+        image: react,
     },
     {
         id: "tech6",

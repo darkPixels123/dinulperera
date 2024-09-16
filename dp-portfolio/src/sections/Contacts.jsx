@@ -36,14 +36,43 @@ export default function Contacts({ isDarkMode }) {
               <h3 className={styles.topicName}>Contact</h3>
             </Grid>
           </Grid>
-          <Grid xs={12} item container mt={-5} order={{ xs: 2, md: 1 }}>
+          <Grid xs={12} mt={-5}>
+            <h4 style={{ textAlign: "left" }}>
+              Let’s team up to craft something awesome, Together, we can bring
+              ideas to life in a way that’s bold, beautiful, and built to
+              inspire.
+            </h4>
+          </Grid>
+          {/* map */}
+          <Grid
+            xs={12}
+            container
+            sx={{
+              marginTop: { xs: "20px", md: "0px" },
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "end",
+            }}
+          >
+            <iframe
+              title="location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.2420699409435!2d79.98871256958446!3d6.894397630976664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae251490a54f23b%3A0x9e46305451b3306a!2s69%20Sugathi%20Mawatha!5e0!3m2!1sen!2slk!4v1726235433555!5m2!1sen!2slk"
+              style={{
+                border: 0,
+                borderRadius: "15px",
+                width: "100%",
+                height: "250px",
+              }}
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Grid>
+          {/* map */}
+          <Grid xs={12} item container mt={5}>
             {/* contact details */}
-            <Grid xs={12} md={5} order={{ xs: 2, md: 1 }}>
-              <h4 style={{ textAlign: "left" }}>
-                Let’s team up to craft something awesome, Together, we can bring
-                ideas to life in a way that’s bold, beautiful, and built to
-                inspire.
-              </h4>
+            <Grid xs={2} />
+            <Grid xs={12} md={8} order={{ xs: 2, md: 1 }}>
               <Grid xs={12} container spacing={2}>
                 <Grid item xs={12}>
                   <Box
@@ -88,34 +117,6 @@ export default function Contacts({ isDarkMode }) {
               </Grid>
             </Grid>
             {/* contact details */}
-            {/* map */}
-            <Grid
-              xs={12}
-              md={7}
-              container
-              order={{ xs: 1, md: 2 }}
-              sx={{
-                marginTop: { xs: "20px", md: "0px" },
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "end",
-              }}
-            >
-              <iframe
-                title="location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.2420699409435!2d79.98871256958446!3d6.894397630976664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae251490a54f23b%3A0x9e46305451b3306a!2s69%20Sugathi%20Mawatha!5e0!3m2!1sen!2slk!4v1726235433555!5m2!1sen!2slk"
-                style={{
-                  border: 0,
-                  borderRadius: "15px",
-                  width: "100%",
-                  height: "250px",
-                }}
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </Grid>
-            {/* map */}
           </Grid>
         </Grid>
       </Grid>

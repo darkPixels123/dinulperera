@@ -79,7 +79,7 @@ export default function Projects({ isDarkMode }) {
               sx={{
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: { xs: "center", sm: "left" },
+                justifyContent: { xs: "center"},
                 marginBottom: "10px",
               }}
             >
@@ -96,8 +96,8 @@ export default function Projects({ isDarkMode }) {
                 sx={{
                   display: { xs: "none", md: "flex" },
                   width: "fit-content",
-                  marginLeft: { xs: "auto", md: "0px" },
-                  marginRight: { xs: "auto", md: "0px" },
+                  marginLeft: { xs: "auto"},
+                  marginRight: { xs: "auto" },
                 }}
               >
                 {projectCategories.map((item, index) => {
@@ -117,11 +117,6 @@ export default function Projects({ isDarkMode }) {
                           : styles.LightCarouselCategorySelected
                       }`}
                     >
-                      <img
-                        src={isDarkMode ? item.imgWhite : item.imgBlack}
-                        width={15}
-                        alt="category_img"
-                      />
                       <span
                         style={{ textWrap: "nowrap" }}
                         onClick={() => {
@@ -213,11 +208,6 @@ export default function Projects({ isDarkMode }) {
                               : styles.LightCarouselCategorySelected
                           }`}
                         >
-                          <img
-                            src={isDarkMode ? item.imgWhite : item.imgBlack}
-                            width={15}
-                            alt="category_img"
-                          />
                           <span
                             style={{ textWrap: "nowrap" }}
                             onClick={() => {

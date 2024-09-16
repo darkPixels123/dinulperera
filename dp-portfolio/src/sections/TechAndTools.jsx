@@ -32,7 +32,7 @@ export default function TechAndTools({ isDarkMode }) {
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: { xs: "center", sm: "left" },
+              justifyContent: { xs: "center"},
             }}
           >
             <h3 className={styles.topicName}>Technologies, Tools & Gears</h3>
