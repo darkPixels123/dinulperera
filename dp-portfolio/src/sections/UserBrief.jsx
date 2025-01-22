@@ -151,7 +151,7 @@ export default function UserBrief({ isDarkMode }) {
                   >
                     <h2 className={styles.myName}>Dinul Perera.</h2>
                     <h4 className={styles.myTitle}>
-                      Bsc(Hons) in Information and Technology (UG)
+                      B.Sc (Hons) in Information and Technology (UG)
                     </h4>
                   </div>
                 </div>
